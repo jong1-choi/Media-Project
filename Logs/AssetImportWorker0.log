@@ -1,0 +1,167 @@
+Using pre-set license
+Built from '2021.1/staging' branch; Version is '2021.1.7f1 (d91830b65d9b) revision 14227504'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19043.1110; Version 2009; 64bit' Language: 'ko' Physical Memory: 7964 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Users\tlsdl\Desktop\Unity\2021.1.7f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/tlsdl/Desktop/Unity/MediaProject/Media-Project
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+63687
+Successfully changed project path to: C:/Users/tlsdl/Desktop/Unity/MediaProject/Media-Project
+C:/Users/tlsdl/Desktop/Unity/MediaProject/Media-Project
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 177.41 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.7f1 (d91830b65d9b)
+[Subsystems] Discovering subsystems at path C:/Users/tlsdl/Desktop/Unity/2021.1.7f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/tlsdl/Desktop/Unity/MediaProject/Media-Project/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) UHD Graphics 620 (ID=0x3ea0)
+    Vendor:   Intel
+    VRAM:     3982 MB
+    Driver:   27.20.100.8729
+Initialize mono
+Mono path[0] = 'C:/Users/tlsdl/Desktop/Unity/2021.1.7f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Users/tlsdl/Desktop/Unity/2021.1.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Users/tlsdl/Desktop/Unity/2021.1.7f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56852
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Users/tlsdl/Desktop/Unity/2021.1.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004808 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 186.03 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.062 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006130 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\tlsdl\Desktop\Unity\MediaProject\Media-Project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\tlsdl\Desktop\Unity\MediaProject\Media-Project\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.88 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.478 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
+Refreshing native plugins compatible for Editor in 0.91 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2668 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 99.6 MB.
+System memory in use after: 99.8 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 3122.
+Total: 3.817000 ms (FindLiveObjects: 0.365800 ms CreateObjectMapping: 0.216600 ms MarkObjects: 3.087700 ms  DeleteObjects: 0.144800 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/PartyMonsterRumblePBR/Shader
+  artifactKey: Guid(d28da58d30003524bb2ab6d39da58917) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PartyMonsterRumblePBR/Shader using Guid(d28da58d30003524bb2ab6d39da58917) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5360ffe42f737cb37ae1afacf6788218') in 0.016771 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000450 seconds.
+  path: Assets/PartyMonsterRumblePBR/Scene
+  artifactKey: Guid(e991e65e376a06e4f9125168b7afffe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PartyMonsterRumblePBR/Scene using Guid(e991e65e376a06e4f9125168b7afffe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e6193c1f69058cbe9b576a3f6fcb310') in 0.010747 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000469 seconds.
+  path: Assets/PartyMonsterRumblePBR/Prefab
+  artifactKey: Guid(017a80ca84b79d54989a1d4f29b3888d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PartyMonsterRumblePBR/Prefab using Guid(017a80ca84b79d54989a1d4f29b3888d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e75eb32e4ec3527e1acfa4f4760faa3') in 0.010751 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000411 seconds.
+  path: Assets/RPG Monster Wave PBR/Scenes
+  artifactKey: Guid(6fdc266209d2ab540b710cbdaf405655) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RPG Monster Wave PBR/Scenes using Guid(6fdc266209d2ab540b710cbdaf405655) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfefd33c6dc5797f9afd8fc98c3741dc') in 0.014177 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000376 seconds.
+  path: Assets/PartyMonsterRumblePBR/Scene/Animation Layer.unity
+  artifactKey: Guid(7e54744461a4da841a8f08a3fa7ce9cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PartyMonsterRumblePBR/Scene/Animation Layer.unity using Guid(7e54744461a4da841a8f08a3fa7ce9cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff9225ecca969eb50b2f2f786dbe5d05') in 0.029652 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000442 seconds.
+  path: Assets/PartyMonsterRumblePBR/Scene/DefaultPBR.unity
+  artifactKey: Guid(608f08f2f6899a64dbad78bd8bcffdfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PartyMonsterRumblePBR/Scene/DefaultPBR.unity using Guid(608f08f2f6899a64dbad78bd8bcffdfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d1e13b5726bec4f4bfb41e9df650a54') in 0.050079 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.052358 seconds.
+  path: Assets/PartyMonsterRumblePBR/Scene/MaskTintPBR.unity
+  artifactKey: Guid(21d09a44ad8629940904b65bd384411c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PartyMonsterRumblePBR/Scene/MaskTintPBR.unity using Guid(21d09a44ad8629940904b65bd384411c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1af7134390f57b3e2f725db22ed97f46') in 0.013008 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.917205 seconds.
+  path: Assets/PartyMonsterRumblePBR/Scene/Rootmotion.unity
+  artifactKey: Guid(cf7f91b4de495ab43beb760b69f0c0cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/PartyMonsterRumblePBR/Scene/Rootmotion.unity using Guid(cf7f91b4de495ab43beb760b69f0c0cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f89b2675bb8f07d60c6fe08724a75e84') in 0.014411 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 109.569267 seconds.
+  path: Assets/Simple Toon/Shaders
+  artifactKey: Guid(d6fdf08ede4bb47da9942ca6c29b83a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Simple Toon/Shaders using Guid(d6fdf08ede4bb47da9942ca6c29b83a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e60ced3d274499aebb64306d9fc954e5') in 0.015923 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.140489 seconds.
+  path: Assets/Simple Toon/Shaders/STCore.cginc
+  artifactKey: Guid(69d7471035c7c40f695a9199c7916a3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Simple Toon/Shaders/STCore.cginc using Guid(69d7471035c7c40f695a9199c7916a3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9988e86775e1b0adaa0e24ddbe1d3d62') in 0.082721 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.396521 seconds.
+  path: Assets/Simple Toon/Shaders/STDefault.shader
+  artifactKey: Guid(7cd5de0b884b14f88ab763ef465e1799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Simple Toon/Shaders/STDefault.shader using Guid(7cd5de0b884b14f88ab763ef465e1799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eccd5b10bec27984e9619ca798ec1e18') in 0.040212 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.618895 seconds.
+  path: Assets/Simple Toon/Shaders/STOutline.shader
+  artifactKey: Guid(128c5f1edaefa4c4fb3f9f7a4615edb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Simple Toon/Shaders/STOutline.shader using Guid(128c5f1edaefa4c4fb3f9f7a4615edb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2f602e3f07455551aa92aebe0cb554b') in 0.013811 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.298583 seconds.
+  path: Assets/Simple Toon/Shaders/STTransparent.shader
+  artifactKey: Guid(481153b840b6e408da95e6afbe176397) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Simple Toon/Shaders/STTransparent.shader using Guid(481153b840b6e408da95e6afbe176397) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1bf3b575bb6373628741fb552f14479') in 0.019169 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.613027 seconds.
+  path: Assets/Simple Toon
+  artifactKey: Guid(7a461327f305bb844baf99987db21d94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Simple Toon using Guid(7a461327f305bb844baf99987db21d94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7f6060cbf86607e3ed2b9586fb5ba0a') in 0.056286 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.470346 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(bd9923a0885344198be164eebf6444ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(bd9923a0885344198be164eebf6444ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c442d0bbdf3a3a2f3ba3bc6c9f0493ae') in 0.013243 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.088877 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c9b049a5effc1b311bc37218be8870f') in 0.014415 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
