@@ -4166,7 +4166,11 @@ MonoBehaviour:
   - {fileID: 1557585983417840, guid: a81cfdb3f3b757345a955fb9947163c8, type: 3}
   - {fileID: 1524411113276028, guid: ad121b684e3934947a2d412b4202d8fd, type: 3}
   enemyCount: 5
-  more: 1
+  enemyMore: 1
+  towers:
+  - {fileID: 8230766273605467533, guid: ffd110f01222ea943bc4b2bd2524f1d9, type: 3}
+  towerCount: 5
+  towerMore: 1
 --- !u!4 &1713374197
 Transform:
   m_ObjectHideFlags: 0
