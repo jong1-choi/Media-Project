@@ -5,12 +5,12 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private Transform planet;
-    [SerializeField] private GameObject WayPoint;
     
     [SerializeField] private float moveSpeed = 2.0f;
     [SerializeField] private float rotationSpeed = 1.1f;
-
+    
     private List<Transform> waypoints = new List<Transform>();
+    
     private Transform targetWaypoint;
     private int targetWayPointIndex = 0;
     private int lastWayPointIndex;
@@ -19,11 +19,9 @@ public class Enemy : MonoBehaviour
     
     void Start()
     {
-        int count = WayPoint.transform.childCount;
-        for (int i = 0; i < count; i++)
-        {
-            waypoints.Add(WayPoint.transform.GetChild(i).gameObject.transform);
-        }
+        waypoints = GameManager.Instance.Waypoints;
+        planet = GameManager.Instance.planet;
+        
         targetWaypoint = waypoints[targetWayPointIndex];
         lastWayPointIndex = waypoints.Count - 1;
     }
