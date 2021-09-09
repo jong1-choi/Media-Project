@@ -286,7 +286,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planet: {fileID: 0}
-  WayPoint: {fileID: 0}
   moveSpeed: 2
   rotationSpeed: 1.1
 --- !u!54 &716113384

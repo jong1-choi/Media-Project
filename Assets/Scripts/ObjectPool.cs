@@ -18,7 +18,7 @@ public class ObjectPool : MonoBehaviour
     
     
     // enemy의 list를 담는 pool list 
-    [SerializeField] private List<List<GameObject>> enemyPools;
+    private List<List<GameObject>> enemyPools;
     // enemy가 담기는 list
     [SerializeField] public List<GameObject> enemies;
     // ObjectPooling으로 "몇마리"를 미리 생성해줄지.
