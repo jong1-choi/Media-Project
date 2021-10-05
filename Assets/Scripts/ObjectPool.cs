@@ -31,8 +31,7 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] public List<GameObject> towers;
     [SerializeField] private int towerCount = 5;
     [SerializeField] private bool towerMore = true;
-    
-    
+
     // enemy를 생성하기 전에 다른 Script에서 접근하면 안돼서,
     // Start()보다 빠른 Awake()에서 생성 함수(Create())를 호출.
     void Awake()
@@ -40,7 +39,6 @@ public class ObjectPool : MonoBehaviour
         Create();
     }
 
-    
     private void Create()
     {
         enemyPools = new List<List<GameObject>>();
@@ -67,7 +65,6 @@ public class ObjectPool : MonoBehaviour
             }
         } 
     }
-
 
     // index로 원하는 enemy를 return.
     public GameObject GetEnemyObject(int index)

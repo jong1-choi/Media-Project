@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         enemy.transform.rotation = Quaternion.identity;
         enemy.SetActive(true);
     }
-
+    
     
     private IEnumerator SpawnWithTime()
     {

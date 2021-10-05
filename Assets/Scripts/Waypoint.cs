@@ -22,7 +22,6 @@ public class Waypoint : MonoBehaviour
         
         SettingWayPoints();
     }
-
     
     // waypoints를 map표면에 위치시켜줌.
     private void SettingWayPoints()
