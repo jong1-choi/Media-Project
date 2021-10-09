@@ -1413,9 +1413,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04d64e41faf4d7489c5b64b34e82873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet: {fileID: 0}
   moveSpeed: 2
   rotationSpeed: 1.1
+  hurtParticle: {fileID: 19814690, guid: cd4d7020429cde74db076ffa72495419, type: 3}
 --- !u!1 &1781689967026810
 GameObject:
   m_ObjectHideFlags: 0

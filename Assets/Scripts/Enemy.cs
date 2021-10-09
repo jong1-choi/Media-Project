@@ -6,10 +6,11 @@ namespace MediaProject
 {
 	public class Enemy : MonoBehaviour
 	{
-		[SerializeField] private Transform planet;
 		[SerializeField] private float moveSpeed = 2.0f;
 		[SerializeField] private float rotationSpeed = 1.1f;
-    
+		
+		private Transform planet;
+		
 		private List<Transform> waypoints = new List<Transform>();
     
 		private Transform targetWaypoint;
@@ -17,6 +18,7 @@ namespace MediaProject
 		private int lastWayPointIndex;
 		private float minDistance = 1.0f;
 
+		[SerializeField] private ParticleSystem hurtParticle;
 		private float hp = 10.0f;
     
 		void Start()
@@ -87,6 +89,23 @@ namespace MediaProject
 			{
 				Dead();
 			}
+		}
+		
+		// damage를 입을 때 호출. 맞는 방향으로 particle이 튀도록 함.
+		public void TakeDamage( float damage, Quaternion dir )
+		{
+			// hp를 깎고, 맞는 소리를 재생.
+			hp -= damage;
+			AudioManager.Instance.Play(0);
+			if (hp <= 0)
+			{
+				Dead();
+			}
+			
+			// 맞는 방향(z방향)으로 particle 생성.
+			ParticleSystem particle = Instantiate(hurtParticle, transform.position, dir);
+			// particle 시간 끝나면 파괴.
+			Destroy(particle.gameObject, particle.main.duration);
 		}
 		
 		// Enemy가 죽을 때 호출해서 사용.
