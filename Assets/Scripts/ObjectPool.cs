@@ -59,9 +59,9 @@ public class ObjectPool : MonoBehaviour
             towerPools.Add(new List<GameObject>());
             for (int j = 0; j < towerCount; j++)
             {
-                GameObject obj = Instantiate(towers[i]);   // Enemy 생성.
-                obj.SetActive(false);                       // Enemy 비활성화
-                towerPools[i].Add(obj);                     // Pool에 Enemy 추가.
+                GameObject obj = Instantiate(towers[i]);
+                obj.SetActive(false);
+                towerPools[i].Add(obj);
             }
         } 
     }

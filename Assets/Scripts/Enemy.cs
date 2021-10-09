@@ -17,6 +17,7 @@ namespace MediaProject
 		private int lastWayPointIndex;
 		private float minDistance = 1.0f;
 
+		private float hp = 10.0f;
     
 		void Start()
 		{
@@ -74,6 +75,24 @@ namespace MediaProject
 		{
 			Quaternion directionToSphere = Quaternion.FromToRotation(transform.up, (transform.position - planet.position).normalized) * transform.localRotation;
 			transform.rotation = directionToSphere;
+		}
+		
+		// damage를 입을 때 호출.
+		public void TakeDamage( float damage )
+		{
+			// hp를 깎고, 맞는 소리를 재생.
+			hp -= damage;
+			AudioManager.Instance.Play(0);
+			if (hp <= 0)
+			{
+				Dead();
+			}
+		}
+		
+		// Enemy가 죽을 때 호출해서 사용.
+		private void Dead()
+		{
+			gameObject.SetActive(false);
 		}
 	}
 }
