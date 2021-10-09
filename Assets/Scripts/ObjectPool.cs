@@ -15,8 +15,8 @@ public class ObjectPool : MonoBehaviour
     // 2. 받은 Object를 활성화.
     // 3. ... 사용 ..
     // *****************
-    
-    
+
+    [SerializeField] private GameObject enemyPoolObj;
     // enemy의 list를 담는 pool list 
     private List<List<GameObject>> enemyPools;
     // enemy가 담기는 list
@@ -27,6 +27,7 @@ public class ObjectPool : MonoBehaviour
     // enemyCount까지만 생성하고 싶을 때, enemyMore = false.
     [SerializeField] private bool enemyMore = true;
     
+    [SerializeField] private GameObject towerPoolObj;
     private List<List<GameObject>> towerPools;
     [SerializeField] public List<GameObject> towers;
     [SerializeField] private int towerCount = 5;
@@ -47,9 +48,10 @@ public class ObjectPool : MonoBehaviour
             enemyPools.Add(new List<GameObject>());
             for (int j = 0; j < enemyCount; j++)
             {
-                GameObject obj = Instantiate(enemies[i]);   // Enemy 생성.
-                obj.SetActive(false);                       // Enemy 비활성화
-                enemyPools[i].Add(obj);                     // Pool에 Enemy 추가.
+                GameObject obj = Instantiate(enemies[i]);       // Enemy 생성.
+                obj.transform.parent = enemyPoolObj.transform;  // EnemyPool Object의 자식으로.
+                obj.SetActive(false);                           // Enemy 비활성화
+                enemyPools[i].Add(obj);                         // Pool에 Enemy 추가.
             }
         }
         
@@ -60,6 +62,7 @@ public class ObjectPool : MonoBehaviour
             for (int j = 0; j < towerCount; j++)
             {
                 GameObject obj = Instantiate(towers[i]);
+                obj.transform.parent = towerPoolObj.transform;
                 obj.SetActive(false);
                 towerPools[i].Add(obj);
             }
