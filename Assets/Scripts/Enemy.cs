@@ -105,7 +105,8 @@ namespace MediaProject
 			// 맞는 방향(z방향)으로 particle 생성.
 			ParticleSystem particle = Instantiate(hurtParticle, transform.position, dir);
 			// particle 시간 끝나면 파괴.
-			Destroy(particle.gameObject, particle.main.duration);
+			// Destroy(particle.gameObject, particle.main.duration); // TODO: particle duration 조절.
+			Destroy(particle.gameObject, 3.0f);
 		}
 		
 		// Enemy가 죽을 때 호출해서 사용.
