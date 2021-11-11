@@ -63,7 +63,7 @@ namespace MediaProject
 			if (!TowerCreate.isUpgrade) return;
 			message.text = "업그레이드에 사용될 타워를 선택해주세요.";
 
-			if (Input.GetMouseButtonUp(0)) // tower 버튼을 누르고 디스크를 클릭 했을 때
+			if (Input.GetMouseButtonDown(0)) // tower 버튼을 누르고 디스크를 클릭 했을 때
 			{
 				// ray cast 처리
 				var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
