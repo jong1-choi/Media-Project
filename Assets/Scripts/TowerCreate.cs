@@ -82,18 +82,18 @@ namespace MediaProject
 					// 클릭하면 디스크의 이름을 String으로 가져오므로 Int로 변환
 					int diskIndex = Convert.ToInt32(hit.transform.name);
 					
-					if (Disc.discInfo[diskIndex-1].towerLevel == 0)
+					if (Disc.discInfo[diskIndex].towerLevel == 0)
 					{
-						Create(diskIndex-1);
+						Create(diskIndex);
 						message.text = "";
 					}
 					
-					else if (Disc.discInfo[diskIndex-1].towerLevel > 0 && Disc.discInfo[diskIndex-1].towerLevel < 4)
+					else if (Disc.discInfo[diskIndex].towerLevel > 0 && Disc.discInfo[diskIndex].towerLevel < 4)
 					{
 						// 업그레이드할 타워를 선택받기 위해 업그레이드 트리거를 On
 						isUpgrade = true;
 						// 업그레이드 처리를 위해 받아온 diskIndex를 넘겨줌
-						upgradeDiskNum = diskIndex - 1;
+						upgradeDiskNum = diskIndex;
 						message.text = "";
 					}
 					else

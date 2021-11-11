@@ -164,9 +164,10 @@ GameObject:
   - component: {fileID: 43547211}
   - component: {fileID: 43547213}
   - component: {fileID: 43547212}
+  - component: {fileID: 43547214}
   m_Layer: 0
-  m_Name: disk63
-  m_TagString: Untagged
+  m_Name: 24
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,6 +236,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43547210}
   m_Mesh: {fileID: 8551870073020294336, guid: 608697e85efa06f47a7d4f4829e740c5, type: 3}
+--- !u!65 &43547214
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43547210}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 8.1956386e-10, z: 0.02}
+  m_Center: {x: -2.3283064e-10, y: -0.0000000037252903, z: 0}
 --- !u!1 &61863240
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,9 +833,10 @@ GameObject:
   - component: {fileID: 563703330}
   - component: {fileID: 563703332}
   - component: {fileID: 563703331}
+  - component: {fileID: 563703333}
   m_Layer: 0
-  m_Name: disk90
-  m_TagString: Untagged
+  m_Name: 35
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -890,6 +905,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563703329}
   m_Mesh: {fileID: 8551870073020294336, guid: 608697e85efa06f47a7d4f4829e740c5, type: 3}
+--- !u!65 &563703333
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563703329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000001, y: 5.2154064e-10, z: 0.020000001}
+  m_Center: {x: -4.656613e-10, y: -0.0000000037252903, z: 0}
 --- !u!1 &566598876
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,9 +959,10 @@ GameObject:
   - component: {fileID: 632503299}
   - component: {fileID: 632503301}
   - component: {fileID: 632503300}
+  - component: {fileID: 632503302}
   m_Layer: 0
-  m_Name: disk59
-  m_TagString: Untagged
+  m_Name: 23
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1002,6 +1031,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632503298}
   m_Mesh: {fileID: 8551870073020294336, guid: 608697e85efa06f47a7d4f4829e740c5, type: 3}
+--- !u!65 &632503302
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632503298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019999994, y: 0.0000000023841857, z: 0.019999998}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &671781054
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,9 +1145,10 @@ GameObject:
   - component: {fileID: 797392223}
   - component: {fileID: 797392225}
   - component: {fileID: 797392224}
+  - component: {fileID: 797392226}
   m_Layer: 0
-  m_Name: disk57
-  m_TagString: Untagged
+  m_Name: 22
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1174,6 +1217,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797392222}
   m_Mesh: {fileID: 8551870073020294336, guid: 608697e85efa06f47a7d4f4829e740c5, type: 3}
+--- !u!65 &797392226
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797392222}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000001, y: 3.72529e-10, z: 0.019999998}
+  m_Center: {x: 0, y: 0, z: -1.1641532e-10}
 --- !u!1 &798322828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,9 +1320,10 @@ GameObject:
   - component: {fileID: 846592152}
   - component: {fileID: 846592154}
   - component: {fileID: 846592153}
+  - component: {fileID: 846592155}
   m_Layer: 0
-  m_Name: disk88
-  m_TagString: Untagged
+  m_Name: 34
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1335,6 +1392,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 846592151}
   m_Mesh: {fileID: 8551870073020294336, guid: 608697e85efa06f47a7d4f4829e740c5, type: 3}
+--- !u!65 &846592155
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846592151}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000005, y: 4.4703483e-10, z: 0.020000009}
+  m_Center: {x: 0.0000000011641532, y: 0, z: 9.313226e-10}
 --- !u!1 &859896709
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,9 +2001,10 @@ GameObject:
   - component: {fileID: 991261990}
   - component: {fileID: 991261992}
   - component: {fileID: 991261991}
+  - component: {fileID: 991261993}
   m_Layer: 0
-  m_Name: disk75
-  m_TagString: Untagged
+  m_Name: 29
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1945,13 +2016,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991261989}
-  m_LocalRotation: {x: -0.60916626, y: -0.45172438, z: 0.65180296, w: -0.0038108751}
+  m_LocalRotation: {x: -0.64536464, y: -0.45077097, z: 0.615983, w: -0.029579327}
   m_LocalPosition: {x: 0.0332, y: -0.0316, z: -0.0254}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1263221908}
   m_RootOrder: 29
-  m_LocalEulerAnglesHint: {x: 36.407, y: -100.761, z: 137.34}
+  m_LocalEulerAnglesHint: {x: 36.407, y: -107.303, z: 137.34}
 --- !u!23 &991261991
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2002,6 +2073,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991261989}
   m_Mesh: {fileID: 8551870073020294336, guid: 608697e85efa06f47a7d4f4829e740c5, type: 3}
+--- !u!65 &991261993
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991261989}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000007, y: 0.0000000037252903, z: 0.020000003}
+  m_Center: {x: 9.313226e-10, y: -0.0000000037252903, z: 0}
 --- !u!1 &993337951
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,9 +2163,10 @@ GameObject:
   - component: {fileID: 994723751}
   - component: {fileID: 994723753}
   - component: {fileID: 994723752}
+  - component: {fileID: 994723754}
   m_Layer: 0
-  m_Name: disk83
-  m_TagString: Untagged
+  m_Name: 32
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2093,13 +2178,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994723750}
-  m_LocalRotation: {x: -0.84512895, y: -0.02599714, z: 0.44457203, w: -0.2956973}
+  m_LocalRotation: {x: -0.8673676, y: 0.03282557, z: 0.4113047, w: -0.27825218}
   m_LocalPosition: {x: 0.0054, y: -0.0428, z: 0.0308}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1263221908}
   m_RootOrder: 32
-  m_LocalEulerAnglesHint: {x: 31.528, y: -120.283, z: 194.886}
+  m_LocalEulerAnglesHint: {x: 27.109, y: -124.706, z: 198.73}
 --- !u!23 &994723752
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2150,6 +2235,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994723750}
   m_Mesh: {fileID: 8551870073020294336, guid: 608697e85efa06f47a7d4f4829e740c5, type: 3}
+--- !u!65 &994723754
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994723750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000001, y: 0.000000001490116, z: 0.02}
+  m_Center: {x: -0.0000000018626451, y: 0, z: 4.656613e-10}
 --- !u!1 &1042914861
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,9 +2259,10 @@ GameObject:
   - component: {fileID: 1042914862}
   - component: {fileID: 1042914864}
   - component: {fileID: 1042914863}
+  - component: {fileID: 1042914865}
   m_Layer: 0
-  m_Name: disk81
-  m_TagString: Untagged
+  m_Name: 31
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2232,6 +2331,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042914861}
   m_Mesh: {fileID: 8551870073020294336, guid: 608697e85efa06f47a7d4f4829e740c5, type: 3}
+--- !u!65 &1042914865
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042914861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019999996, y: 0.0000000020861626, z: 0.019999998}
+  m_Center: {x: -0.0000000018626451, y: 0.0000000037252903, z: 0.0000000018626451}
 --- !u!1 &1212955523
 GameObject:
   m_ObjectHideFlags: 0
@@ -2428,9 +2540,10 @@ GameObject:
   - component: {fileID: 1265569149}
   - component: {fileID: 1265569151}
   - component: {fileID: 1265569150}
+  - component: {fileID: 1265569152}
   m_Layer: 0
-  m_Name: disk73
-  m_TagString: Untagged
+  m_Name: 28
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2499,6 +2612,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265569148}
   m_Mesh: {fileID: 8551870073020294336, guid: 608697e85efa06f47a7d4f4829e740c5, type: 3}
+--- !u!65 &1265569152
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265569148}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000001, y: 0.0000000033155083, z: 0.02}
+  m_Center: {x: -9.313226e-10, y: 0, z: -8.1490725e-10}
 --- !u!1 &1353156225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2713,9 +2839,10 @@ GameObject:
   - component: {fileID: 1466362120}
   - component: {fileID: 1466362122}
   - component: {fileID: 1466362121}
+  - component: {fileID: 1466362123}
   m_Layer: 0
-  m_Name: disk67
-  m_TagString: Untagged
+  m_Name: 26
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2727,13 +2854,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466362119}
-  m_LocalRotation: {x: -0.24695267, y: -0.24660882, z: 0.8161751, w: 0.4604961}
+  m_LocalRotation: {x: -0.28110674, y: -0.26578385, z: 0.8050505, w: 0.44970167}
   m_LocalPosition: {x: -0.0299, y: -0.0242, z: -0.0348}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1263221908}
   m_RootOrder: 26
-  m_LocalEulerAnglesHint: {x: 10.085, y: -39.801, z: 117.476}
+  m_LocalEulerAnglesHint: {x: 10.085, y: -44.629, z: 117.476}
 --- !u!23 &1466362121
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2784,6 +2911,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466362119}
   m_Mesh: {fileID: 8551870073020294336, guid: 608697e85efa06f47a7d4f4829e740c5, type: 3}
+--- !u!65 &1466362123
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466362119}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 2.9802322e-10, z: 0.02}
+  m_Center: {x: 9.313226e-10, y: 0, z: -0.0000000018626451}
 --- !u!1 &1505305311
 GameObject:
   m_ObjectHideFlags: 0
@@ -2825,9 +2965,10 @@ GameObject:
   - component: {fileID: 1516478382}
   - component: {fileID: 1516478384}
   - component: {fileID: 1516478383}
+  - component: {fileID: 1516478385}
   m_Layer: 0
-  m_Name: disk65
-  m_TagString: Untagged
+  m_Name: 25
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2896,6 +3037,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516478381}
   m_Mesh: {fileID: 8551870073020294336, guid: 608697e85efa06f47a7d4f4829e740c5, type: 3}
+--- !u!65 &1516478385
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516478381}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000009, y: 0.000000003799796, z: 0.02}
+  m_Center: {x: 9.313226e-10, y: 0, z: 4.656613e-10}
 --- !u!1 &1557738704
 GameObject:
   m_ObjectHideFlags: 0
@@ -2967,9 +3121,10 @@ GameObject:
   - component: {fileID: 1685437874}
   - component: {fileID: 1685437876}
   - component: {fileID: 1685437875}
+  - component: {fileID: 1685437877}
   m_Layer: 0
-  m_Name: disk69
-  m_TagString: Untagged
+  m_Name: 27
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2981,13 +3136,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685437873}
-  m_LocalRotation: {x: -0.3646342, y: -0.4155886, z: 0.7531045, w: 0.3565974}
+  m_LocalRotation: {x: -0.4001843, y: -0.39834735, z: 0.75588024, w: 0.33138663}
   m_LocalPosition: {x: -0.0087, y: -0.0258, z: -0.0444}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1263221908}
   m_RootOrder: 27
-  m_LocalEulerAnglesHint: {x: 21.463, y: -65.316, z: 115.472}
+  m_LocalEulerAnglesHint: {x: 19.693, y: -67.365, z: 119.457}
 --- !u!23 &1685437875
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3038,6 +3193,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685437873}
   m_Mesh: {fileID: 8551870073020294336, guid: 608697e85efa06f47a7d4f4829e740c5, type: 3}
+--- !u!65 &1685437877
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685437873}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000003, y: 0.0000000020861626, z: 0.020000003}
+  m_Center: {x: 0, y: 0, z: -9.313226e-10}
 --- !u!1 &1713374195
 GameObject:
   m_ObjectHideFlags: 0
@@ -3069,16 +3237,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPoolObj: {fileID: 1410511667}
   enemies:
-  - {fileID: 1123161434240648, guid: e2ce315c37e32fd4b9d2fd8f2d56a7d0, type: 3}
-  - {fileID: 1594767147126006, guid: 33eba0da32885b84ebf38245df0735fa, type: 3}
-  - {fileID: 1201003157251696, guid: f397a44c833ad65409eba4bce5ea62ed, type: 3}
-  - {fileID: 1706760125350986, guid: 45f36e2270151a542be4982f9f1dd581, type: 3}
-  - {fileID: 1748489546896114, guid: fb6e154907ded46479e5d7ff1c7ef748, type: 3}
-  - {fileID: 1765397208479606, guid: 3e08eaa99fbf41647adc835cdda0472a, type: 3}
-  - {fileID: 1088474434442572, guid: ebf2cc118768d314988702254deb07a7, type: 3}
-  - {fileID: 1931298151966786, guid: e5bf32a70c2e58f4f9ec61dad9659a4b, type: 3}
-  - {fileID: 1557585983417840, guid: a81cfdb3f3b757345a955fb9947163c8, type: 3}
-  - {fileID: 1524411113276028, guid: ad121b684e3934947a2d412b4202d8fd, type: 3}
+  - {fileID: 3607088120601887423, guid: d41637b83dff640269551d9c092802f0, type: 3}
+  - {fileID: 3994785945262754013, guid: b968b8ca2920c4497b101358d8666f3c, type: 3}
+  - {fileID: 6045175402109242002, guid: 956fc2f44f571477f9ca5fabc2ed4d58, type: 3}
+  - {fileID: 7472954939728859666, guid: 194a6f3074b1e46d898fadb69e1f10a5, type: 3}
+  - {fileID: 5465060268525794125, guid: 8bd8573aacc744fa18d6b25cc01efd54, type: 3}
+  - {fileID: 7690907527824794656, guid: fcf4f410309754e2b9e9a8abb1ac82c2, type: 3}
+  - {fileID: 3917250480545050381, guid: bdd906d6fb0264c6eb293ddb5cbe04b3, type: 3}
+  - {fileID: 4380592338757483591, guid: 60960a26bc7b344e7a2910a5cdc15651, type: 3}
+  - {fileID: 6646909101577997468, guid: 97f2e9bedd6c6456a8aa900ceb1fe440, type: 3}
+  - {fileID: 7314050168954492760, guid: d8421237728f0425c90998b53a51d102, type: 3}
   enemyCount: 5
   enemyMore: 1
   towerPoolObj: {fileID: 1212955523}
@@ -3142,9 +3310,10 @@ GameObject:
   - component: {fileID: 1847123967}
   - component: {fileID: 1847123969}
   - component: {fileID: 1847123968}
+  - component: {fileID: 1847123970}
   m_Layer: 0
-  m_Name: disk77
-  m_TagString: Untagged
+  m_Name: 30
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3213,6 +3382,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847123966}
   m_Mesh: {fileID: 8551870073020294336, guid: 608697e85efa06f47a7d4f4829e740c5, type: 3}
+--- !u!65 &1847123970
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847123966}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019999998, y: 9.778887e-10, z: 0.019999998}
+  m_Center: {x: 3.4924597e-10, y: 0, z: -0.0000000011641532}
 --- !u!1 &1851773277
 GameObject:
   m_ObjectHideFlags: 0
@@ -3568,9 +3750,10 @@ GameObject:
   - component: {fileID: 2040784326}
   - component: {fileID: 2040784328}
   - component: {fileID: 2040784327}
+  - component: {fileID: 2040784329}
   m_Layer: 0
-  m_Name: disk86
-  m_TagString: Untagged
+  m_Name: 33
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3639,6 +3822,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040784325}
   m_Mesh: {fileID: 8551870073020294336, guid: 608697e85efa06f47a7d4f4829e740c5, type: 3}
+--- !u!65 &2040784329
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040784325}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000001, y: 0.0000000026822091, z: 0.020000009}
+  m_Center: {x: -9.313226e-10, y: -0.0000000037252903, z: -4.656613e-10}
 --- !u!1 &2043317615
 GameObject:
   m_ObjectHideFlags: 0
@@ -3970,7 +4166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8809844052886517488}
   m_LocalRotation: {x: -0.38679004, y: -0.45526612, z: 0.50169474, w: 0.62564266}
-  m_LocalPosition: {x: -0.0152, y: 0.0139, z: -0.048}
+  m_LocalPosition: {x: -0.0151, y: 0.0138, z: -0.0476}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1263221908}
@@ -4000,7 +4196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4444624819059890304}
   m_LocalRotation: {x: -0.24152754, y: -0.33388895, z: 0.58299446, w: 0.7002143}
-  m_LocalPosition: {x: -0.0354, y: 0.0161, z: -0.036}
+  m_LocalPosition: {x: -0.0346, y: 0.0159, z: -0.0352}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1263221908}
@@ -4154,13 +4350,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7568233075510873466}
-  m_LocalRotation: {x: 0.62132126, y: 0.67419857, z: -0.25966322, w: -0.30330053}
-  m_LocalPosition: {x: 0.0276, y: 0.0085, z: -0.0442}
+  m_LocalRotation: {x: 0.59586805, y: 0.6446703, z: -0.31369814, w: -0.36184928}
+  m_LocalPosition: {x: 0.0271, y: 0.0085, z: -0.043}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1263221908}
   m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.534, y: -122.787, z: 84.658}
 --- !u!4 &1023630108709668860
 Transform:
   m_ObjectHideFlags: 0
@@ -4354,13 +4550,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5053402758337721057}
-  m_LocalRotation: {x: -0.028924627, y: -0.11553097, z: 0.5714879, w: 0.81192213}
+  m_LocalRotation: {x: -0.06775143, y: -0.14275093, z: 0.56530344, w: 0.80960727}
   m_LocalPosition: {x: -0.0452, y: 0.0199, z: -0.016}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1263221908}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.963, y: -17.948, z: 69.381}
 --- !u!4 &2027205038763573488
 Transform:
   m_ObjectHideFlags: 0
@@ -4472,13 +4668,27 @@ GameObject:
   - component: {fileID: 6234171194901243588}
   - component: {fileID: 2863090650530886171}
   - component: {fileID: 2837466581520493811}
+  - component: {fileID: 2414899965354412342}
   m_Layer: 0
-  m_Name: disk17
-  m_TagString: Untagged
+  m_Name: 8
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &2414899965354412342
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2414899965354412341}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0, z: 0.019999998}
+  m_Center: {x: -0.0000000027939677, y: 0, z: 0}
 --- !u!1 &2429418059209214178
 GameObject:
   m_ObjectHideFlags: 0
@@ -4490,13 +4700,27 @@ GameObject:
   - component: {fileID: 3769603747086389445}
   - component: {fileID: 1232710667098525956}
   - component: {fileID: 3891832805968156748}
+  - component: {fileID: 2429418059209214179}
   m_Layer: 0
-  m_Name: disk45
-  m_TagString: Untagged
+  m_Name: 18
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &2429418059209214179
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2429418059209214178}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019999998, y: 0.0000000018253923, z: 0.02}
+  m_Center: {x: 0, y: 0, z: 9.313226e-10}
 --- !u!33 &2500089663928738076
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4558,13 +4782,27 @@ GameObject:
   - component: {fileID: 5723609131338349848}
   - component: {fileID: 1035624861457612911}
   - component: {fileID: 587681144212513107}
+  - component: {fileID: 2540972569332912876}
   m_Layer: 0
-  m_Name: disk53
-  m_TagString: Untagged
+  m_Name: 21
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &2540972569332912876
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2540972569332912875}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000003, y: 0.0000000011920929, z: 0.020000003}
+  m_Center: {x: 2.3283064e-10, y: 0, z: 0}
 --- !u!1 &2622922348462114216
 GameObject:
   m_ObjectHideFlags: 0
@@ -4576,13 +4814,27 @@ GameObject:
   - component: {fileID: 4622517016073772854}
   - component: {fileID: 9204597047768429429}
   - component: {fileID: 3186968479093970930}
+  - component: {fileID: 2622922348462114217}
   m_Layer: 0
-  m_Name: disk7
-  m_TagString: Untagged
+  m_Name: 3
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &2622922348462114217
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2622922348462114216}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000009, y: 0.0000000023841857, z: 0.020000009}
+  m_Center: {x: 0.0000000018626451, y: 0, z: -0.0000000018626451}
 --- !u!1 &2755074253344729939
 GameObject:
   m_ObjectHideFlags: 0
@@ -4594,13 +4846,27 @@ GameObject:
   - component: {fileID: 2840945755793063034}
   - component: {fileID: 6362880081940228368}
   - component: {fileID: 2203262368701333842}
+  - component: {fileID: 2755074253344729940}
   m_Layer: 0
-  m_Name: disk5
-  m_TagString: Untagged
+  m_Name: 2
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &2755074253344729940
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2755074253344729939}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019999994, y: 0.0000000013411044, z: 0.019999994}
+  m_Center: {x: -0.0000000018626451, y: -0.0000000037252903, z: 0}
 --- !u!33 &2803415992073498680
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4711,13 +4977,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2755074253344729939}
-  m_LocalRotation: {x: -0.085990176, y: -0.7927672, z: 0.22714953, w: 0.55904275}
+  m_LocalRotation: {x: -0.12074055, y: -0.7882232, z: 0.20236637, w: 0.5684837}
   m_LocalPosition: {x: -0.0015, y: 0.0448, z: -0.0265}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1263221908}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 15.308, y: -106.364, z: 23.87}
+  m_LocalEulerAnglesHint: {x: 10.471, y: -106.043, z: 25.312}
 --- !u!33 &2863090650530886171
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4737,13 +5003,27 @@ GameObject:
   - component: {fileID: 1023630108709668860}
   - component: {fileID: 3039659801274605046}
   - component: {fileID: 8840755385771842648}
+  - component: {fileID: 2953037213626802061}
   m_Layer: 0
-  m_Name: disk43
-  m_TagString: Untagged
+  m_Name: 17
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &2953037213626802061
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2953037213626802060}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000005, y: 0.0000000043120236, z: 0.020000007}
+  m_Center: {x: -1.1641532e-10, y: -0.0000000037252903, z: -4.656613e-10}
 --- !u!33 &3039659801274605046
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4805,13 +5085,27 @@ GameObject:
   - component: {fileID: 4283806634999550280}
   - component: {fileID: 7344519336987504145}
   - component: {fileID: 3505833122027787260}
+  - component: {fileID: 3212823982983192713}
   m_Layer: 0
-  m_Name: disk23
-  m_TagString: Untagged
+  m_Name: 10
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &3212823982983192713
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3212823982983192712}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.0000000010058283, z: 0.02}
+  m_Center: {x: -0.0000000027939677, y: 0, z: 0}
 --- !u!4 &3435637167688101441
 Transform:
   m_ObjectHideFlags: 0
@@ -4915,13 +5209,27 @@ GameObject:
   - component: {fileID: 2289484099253297107}
   - component: {fileID: 2814562249846445121}
   - component: {fileID: 7767865606475206450}
+  - component: {fileID: 3779348067399989938}
   m_Layer: 0
-  m_Name: disk41
-  m_TagString: Untagged
+  m_Name: 16
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &3779348067399989938
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3779348067399989937}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.000000003129244, z: 0.020000003}
+  m_Center: {x: 2.3283064e-10, y: 0, z: 0}
 --- !u!33 &3787783107263178396
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4997,13 +5305,27 @@ GameObject:
   - component: {fileID: 3622933694909291773}
   - component: {fileID: 7793456484894308713}
   - component: {fileID: 8435150101849222606}
+  - component: {fileID: 4038260027952104558}
   m_Layer: 0
-  m_Name: disk51
-  m_TagString: Untagged
+  m_Name: 20
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &4038260027952104558
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4038260027952104557}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000003, y: 0.0000000035762786, z: 0.020000003}
+  m_Center: {x: -4.656613e-10, y: -0.0000000037252903, z: 0.0000000018626451}
 --- !u!1 &4110080449167782809
 GameObject:
   m_ObjectHideFlags: 0
@@ -5015,13 +5337,27 @@ GameObject:
   - component: {fileID: 2394261640575380816}
   - component: {fileID: 3787783107263178396}
   - component: {fileID: 556622185019252121}
+  - component: {fileID: 4110080449167782810}
   m_Layer: 0
-  m_Name: disk15
-  m_TagString: Untagged
+  m_Name: 7
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &4110080449167782810
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4110080449167782809}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.000000001490116, z: 0.020000007}
+  m_Center: {x: 9.313226e-10, y: 0.0000000037252903, z: 0.0000000013969839}
 --- !u!4 &4283806634999550280
 Transform:
   m_ObjectHideFlags: 0
@@ -5065,13 +5401,27 @@ GameObject:
   - component: {fileID: 492997469434148194}
   - component: {fileID: 3757967628968287207}
   - component: {fileID: 2530826764502918981}
+  - component: {fileID: 4444624819059890305}
   m_Layer: 0
-  m_Name: disk29
-  m_TagString: Untagged
+  m_Name: 12
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &4444624819059890305
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4444624819059890304}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000001, y: 0.0000000017881393, z: 0.020000001}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &4489599981797802601
 Transform:
   m_ObjectHideFlags: 0
@@ -5097,13 +5447,27 @@ GameObject:
   - component: {fileID: 2027205038763573488}
   - component: {fileID: 6181565473736896676}
   - component: {fileID: 1107373736480722873}
+  - component: {fileID: 4491767025284226520}
   m_Layer: 0
-  m_Name: disk19
-  m_TagString: Untagged
+  m_Name: 9
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &4491767025284226520
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4491767025284226519}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019999998, y: 0.000000001490116, z: 0.019999998}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &4500101283846238133
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5173,7 +5537,7 @@ GameObject:
   - component: {fileID: 5268121183714764584}
   - component: {fileID: 4645286772691431656}
   m_Layer: 0
-  m_Name: 33
+  m_Name: 14
   m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5245,13 +5609,27 @@ GameObject:
   - component: {fileID: 1553893238029239988}
   - component: {fileID: 5485124832640233192}
   - component: {fileID: 5341137696483444693}
+  - component: {fileID: 5053402758337721058}
   m_Layer: 0
-  m_Name: disk25
-  m_TagString: Untagged
+  m_Name: 11
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &5053402758337721058
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5053402758337721057}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.0000000011920929, z: 0.02}
+  m_Center: {x: -0.0000000030267984, y: 0, z: 9.313226e-10}
 --- !u!1 &5113678620188588765
 GameObject:
   m_ObjectHideFlags: 0
@@ -5263,13 +5641,27 @@ GameObject:
   - component: {fileID: 5929988828346365385}
   - component: {fileID: 1420407157990640987}
   - component: {fileID: 7183586506157476080}
+  - component: {fileID: 5113678620188588766}
   m_Layer: 0
-  m_Name: disk49
-  m_TagString: Untagged
+  m_Name: 19
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &5113678620188588766
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5113678620188588765}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.0000000044703485, z: 0.020000005}
+  m_Center: {x: 2.3283064e-10, y: 0, z: -0.0000000018626451}
 --- !u!23 &5268121183714764584
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5477,13 +5869,27 @@ GameObject:
   - component: {fileID: 574586281585759301}
   - component: {fileID: 2157964878977985981}
   - component: {fileID: 7467845431171453239}
+  - component: {fileID: 6360734435958904078}
   m_Layer: 0
-  m_Name: disk1
-  m_TagString: Untagged
+  m_Name: 0
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &6360734435958904078
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6360734435958904077}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000003, y: 4.4703483e-10, z: 0.020000001}
+  m_Center: {x: 4.656613e-10, y: 0, z: -2.3283064e-10}
 --- !u!33 &6362880081940228368
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5529,13 +5935,27 @@ GameObject:
   - component: {fileID: 3435637167688101441}
   - component: {fileID: 2500089663928738076}
   - component: {fileID: 4710892912998999616}
+  - component: {fileID: 6700821484780469529}
   m_Layer: 0
-  m_Name: disk13
-  m_TagString: Untagged
+  m_Name: 6
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &6700821484780469529
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6700821484780469528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000001, y: 0.0000000017881393, z: 0.02}
+  m_Center: {x: -9.313226e-10, y: 0, z: 0.0000000018626451}
 --- !u!1 &7031864214072885367
 GameObject:
   m_ObjectHideFlags: 0
@@ -5547,13 +5967,27 @@ GameObject:
   - component: {fileID: 1418369842974427471}
   - component: {fileID: 5615527695297814157}
   - component: {fileID: 4500101283846238133}
+  - component: {fileID: 7031864214072885368}
   m_Layer: 0
-  m_Name: disk9
-  m_TagString: Untagged
+  m_Name: 4
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &7031864214072885368
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7031864214072885367}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019999998, y: 0.0000000018626451, z: 0.019999998}
+  m_Center: {x: -6.9849193e-10, y: 0, z: 4.656613e-10}
 --- !u!23 &7183586506157476080
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5657,13 +6091,27 @@ GameObject:
   - component: {fileID: 857253670590400825}
   - component: {fileID: 2803415992073498680}
   - component: {fileID: 7739607840258668053}
+  - component: {fileID: 7568233075510873467}
   m_Layer: 0
-  m_Name: disk37
-  m_TagString: Untagged
+  m_Name: 15
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &7568233075510873467
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7568233075510873466}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000001, y: 0.0000000016391277, z: 0.020000001}
+  m_Center: {x: 2.3283064e-10, y: -0.0000000037252903, z: -0.0000000037252903}
 --- !u!23 &7739607840258668053
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5948,7 +6396,7 @@ GameObject:
   - component: {fileID: 1309688893545022404}
   - component: {fileID: 8809844052886517489}
   m_Layer: 0
-  m_Name: 31
+  m_Name: 13
   m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6050,13 +6498,27 @@ GameObject:
   - component: {fileID: 6314315685236810608}
   - component: {fileID: 8993088955042560979}
   - component: {fileID: 1401666143892201412}
+  - component: {fileID: 8973198911400446413}
   m_Layer: 0
-  m_Name: disk3
-  m_TagString: Untagged
+  m_Name: 1
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &8973198911400446413
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8973198911400446412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 7.45058e-10, z: 0.02}
+  m_Center: {x: -0.0000000018626451, y: -0.0000000037252903, z: -4.656613e-10}
 --- !u!33 &8993088955042560979
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6076,13 +6538,27 @@ GameObject:
   - component: {fileID: 8552538353242537316}
   - component: {fileID: 1417855290193617491}
   - component: {fileID: 8240653310214402466}
+  - component: {fileID: 9144351284654005306}
   m_Layer: 0
-  m_Name: disk11
-  m_TagString: Untagged
+  m_Name: 5
+  m_TagString: Disc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &9144351284654005306
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9144351284654005305}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019999998, y: 1.4901161e-10, z: 0.019999998}
+  m_Center: {x: 9.313226e-10, y: 0, z: 0}
 --- !u!33 &9204597047768429429
 MeshFilter:
   m_ObjectHideFlags: 0

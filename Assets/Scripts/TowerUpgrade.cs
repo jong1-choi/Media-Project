@@ -76,7 +76,7 @@ namespace MediaProject
 					// 클릭하면 디스크의 이름을 String으로 가져오므로 Int로 변환
 					int diskIndex = Convert.ToInt32(hit.transform.name);
 					
-					LevelUp(diskIndex - 1, TowerCreate.upgradeDiskNum);
+					LevelUp(diskIndex, TowerCreate.upgradeDiskNum);
 				}
 			}
 		}
