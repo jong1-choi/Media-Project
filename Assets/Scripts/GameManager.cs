@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
@@ -18,12 +19,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Object Pool class.
+    // Object Pool class
     [SerializeField] private ObjectPool objectPool;
     
+    // Sphere planet
     public Transform planet;
+
+    // Castle
     [SerializeField] private Transform startPoint;
     
+    // Waypoint
     public GameObject wayPoint;
     public List<Transform> waypoints = new List<Transform>();
     public List<Transform> Waypoints
@@ -31,24 +36,45 @@ public class GameManager : MonoBehaviour
         get { return waypoints; }
         set { waypoints = value; }
     }
-    
 
-    private void Start()
+    // Timer
+    [SerializeField] private Text timeText;
+    [SerializeField] private float buildTime = 15f;
+    [SerializeField] private float playTime = 30f;
+    private float timeRemaining; // 임시로 정함.
+
+    // State
+    private int currentStage; // 0부터. (Player에게 보여지는 건 1부터.)
+    [SerializeField] private Text stageText;
+    public enum CurState
     {
-        // Test Spawn: 7마리만 Spawn
-        StartCoroutine(SpawnWithTime());
+        Building,
+        Playing
+    };
+    public CurState curState;
+
+    
+    void Start()
+    {
+        currentStage = 0;
+        timeRemaining = buildTime;
+        curState = CurState.Building;
+        stageText.text = "1 Stage";
     }
 
 
-    private void Spawn()
+    void Update()
     {
-        // Test: Random으로 Enemy 소환.
+        RunTimer();
+    }
+    
+
+    private void Spawn( int index )
+    {
         // ObjectPool에서 Enemy object를 가져와서,
         // position과 rotation 설정하고,
         // 활성화.
-        int enemyNum = objectPool.enemies.Count;
-        int randomIndex = Random.Range(0, enemyNum);
-        GameObject enemy = objectPool.GetEnemyObject(randomIndex);
+        GameObject enemy = objectPool.GetEnemyObject( index );
 
         enemy.transform.position = startPoint.position;
         enemy.transform.rotation = Quaternion.identity;
@@ -62,8 +88,66 @@ public class GameManager : MonoBehaviour
         int count = 7;
         while (count-- != 0)
         {
-            Spawn();
+            // 현재 stage에 맞는 적 생성
+            Spawn( currentStage );
             yield return new WaitForSeconds(1.5f);
         }
+    }
+    
+    
+    private void RunTimer()
+    {
+        timeRemaining -= Time.deltaTime;
+        
+        // 시간이 다 지났을 때.
+        if (timeRemaining <= 0)
+        {
+            switch (curState)
+            {
+                case CurState.Building: // Building 시간이 끝났을 경우 동작.
+                    StopCoroutine(SpawnWithTime());
+                    StartCoroutine(SpawnWithTime());
+                    SetPlayingState();
+                    break;
+                case CurState.Playing:  // Playing 시간이 끝났을 경우 동작.
+                    currentStage++;
+                    SetBuildingState();
+                    break;
+                default:
+                    print("Exception Case: RunTimer() in GameManager class.");
+                    break;
+            }
+        }
+        DisplayTime(timeRemaining);
+    }
+
+
+    private void SetPlayingState()
+    {
+        stageText.text = (currentStage+1) + " Stage";
+        timeRemaining = playTime; 
+        curState = CurState.Playing;
+    }
+
+
+    private void SetBuildingState()
+    {
+        timeRemaining = buildTime; 
+        curState = CurState.Building;
+    }
+    
+    
+    private void DisplayTime( float time )
+    {
+        if (time <= 0)
+        {
+            timeText.text = "";
+            return;
+        }
+            
+        time += 1;
+        float minutes = Mathf.FloorToInt(time / 60);
+        float seconds = Mathf.FloorToInt(time % 60);
+        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

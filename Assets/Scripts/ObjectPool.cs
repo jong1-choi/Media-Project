@@ -83,6 +83,7 @@ public class ObjectPool : MonoBehaviour
         if (enemyMore)
         {
             GameObject obj = Instantiate(enemies[index]);
+            obj.transform.parent = enemyPoolObj.transform;
             enemyPools[index].Add(obj);
             return obj;
         }
@@ -103,6 +104,7 @@ public class ObjectPool : MonoBehaviour
         if (towerMore)
         {
             GameObject obj = Instantiate(towers[index]);
+            obj.transform.parent = towerPoolObj.transform;
             towerPools[index].Add(obj);
             return obj;
         }
