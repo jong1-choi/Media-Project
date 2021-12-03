@@ -61,7 +61,7 @@ namespace MediaProject
 		void Update()
 		{
 			// 현재 상태 검사
-			if (!(GameManager.Instance.curState == GameManager.CurState.Building)) return;
+			// if (!(GameManager.Instance.curState == GameManager.CurState.Building)) return;
 			
 			if (!TowerCreate.isUpgrade) return;
 			message.text = "업그레이드에 사용될 타워를 선택해주세요.";
