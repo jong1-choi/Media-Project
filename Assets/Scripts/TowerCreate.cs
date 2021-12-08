@@ -12,15 +12,18 @@ namespace MediaProject
 {
 	public class TowerCreate : MonoBehaviour
 	{
-		[SerializeField] Text message;
+		// [SerializeField] Text message;
 		[SerializeField] private ObjectPool objectPool;
 		public static bool isTowerButtonOn;
 		public static bool isUpgrade;
 		public static int upgradeDiskNum;
 		private List<Transform> discSet;
 
+		private Text message;
+		
 		private void Awake()
 		{
+			message = UIManager.Instance.installText;
 			discSet = this.GetComponent<Disc>().discs;
 		}
 
@@ -65,6 +68,7 @@ namespace MediaProject
 			isTowerButtonOn = false;
 			message.text = "타워의 레벨이 최대치입니다.";
 			yield return new WaitForSeconds(2);
+			UIManager.Instance.OpenTextPanel();
 			message.text = "";
 		}
 		
@@ -95,6 +99,7 @@ namespace MediaProject
 					{
 						Create(diskIndex);
 						message.text = "";
+						UIManager.Instance.OpenTextPanel();
 					}
 					
 					else if (Disc.discInfo[diskIndex].towerLevel > 0 && Disc.discInfo[diskIndex].towerLevel < 4)

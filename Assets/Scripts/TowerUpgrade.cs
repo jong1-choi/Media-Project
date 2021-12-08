@@ -8,11 +8,14 @@ namespace MediaProject
 {
 	public class TowerUpgrade : MonoBehaviour
 	{
-		[SerializeField] Text message;
+		// [SerializeField] Text message;
 		private List<Transform> discSet;
+		
+		private Text message;
 		
 		private void Awake()
 		{
+			message = UIManager.Instance.upgradeText;	
 			discSet = this.GetComponent<Disc>().discs;
 		}
     
@@ -42,6 +45,7 @@ namespace MediaProject
 				
 				// 업그레이드가 종료 됐으므로 업그레이드 메세지 초기화
 				message.text = "";
+				UIManager.Instance.OpenTextPanel();
 			}
 			else
 			{
@@ -54,6 +58,7 @@ namespace MediaProject
 			// 잘못된 타워를 설치하면 2초간 메세지를 띄워줌
 			message.text = "잘못된 타워를 선택하셨습니다.";
 			yield return new WaitForSeconds(2);
+			UIManager.Instance.OpenTextPanel();
 			message.text = "";
 		}
 		

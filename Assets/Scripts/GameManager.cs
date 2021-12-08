@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
         currentStage = 0;
         timeRemaining = buildTime;
         curState = CurState.Building;
-        stageText.text = "1 Stage";
+        stageText.text = "Stage 1";
     }
 
 
@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour
 
     private void SetPlayingState()
     {
-        stageText.text = (currentStage+1) + " Stage";
+        stageText.text = "Stage " + (currentStage+1);
         timeRemaining = playTime; 
         curState = CurState.Playing;
     }
@@ -148,6 +148,6 @@ public class GameManager : MonoBehaviour
         time += 1;
         float minutes = Mathf.FloorToInt(time / 60);
         float seconds = Mathf.FloorToInt(time % 60);
-        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        timeText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
 }
