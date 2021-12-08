@@ -71,7 +71,7 @@ namespace MediaProject
 		private void Update()
 		{
 			// 현재 상태 검사
-			if (!(GameManager.Instance.curState == GameManager.CurState.Building)) return;
+			// if (!(GameManager.Instance.curState == GameManager.CurState.Building)) return;
 			
 			if(!isTowerButtonOn || isUpgrade) return;
 
