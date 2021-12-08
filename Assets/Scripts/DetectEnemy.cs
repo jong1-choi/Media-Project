@@ -2,14 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using MediaProject;
+using TreeEditor;
 using UnityEngine;
 
 public class DetectEnemy : MonoBehaviour
 {
     private bool isEnemyDetected;
-    private GameObject target;
+    private Transform target;
     private Collider[] targetEnemy;
-
+    
     private void FindEnemy()
     {
         targetEnemy = Physics.OverlapSphere(transform.position, 5);
@@ -17,7 +18,7 @@ public class DetectEnemy : MonoBehaviour
         {
             if (element.CompareTag("Enemy"))
             {
-                target = element.gameObject;
+                target = element.gameObject.transform;
                 // Debug.Log("FindEnemy");
                 isEnemyDetected = true;
             }
@@ -25,6 +26,16 @@ public class DetectEnemy : MonoBehaviour
         // 타겟이 타워의 범위를 벗어났을 때 회전처리
         
         // Debug.Log("NoEnemy");
+    }
+
+    private void RotateTower(float speed = 1f)
+    {
+        if (!isEnemyDetected) return;
+        Vector3 towerInitialPos = transform.position - new Vector3(0, 0, 0);
+        Vector3 towerToTarget = target.transform.position - transform.position;
+        Vector3 towerToTargetOnPlane = Vector3.ProjectOnPlane(towerToTarget, towerInitialPos).normalized;
+        // Debug.DrawRay(transform.position, towerToTarget, Color.red, 1f);
+        transform.LookAt(transform.position + towerToTargetOnPlane, towerInitialPos);
     }
 
     void Update()
@@ -35,8 +46,7 @@ public class DetectEnemy : MonoBehaviour
         }
         else
         {
-            // 캐릭터 기준으로 z축만 회전해야함
-            transform.LookAt(target.transform.position);
+            this.RotateTower();
             
             if (Vector3.Distance(transform.position, target.transform.position) > 10)
             {

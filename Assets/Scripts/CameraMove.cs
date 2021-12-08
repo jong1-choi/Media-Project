@@ -14,8 +14,8 @@ public class CameraMove : MonoBehaviour
 
 		if (Input.GetMouseButtonDown(0))
 		{
-			m_LocalX = transform.transform.right.normalized;
-			m_LocalY = transform.transform.up.normalized;
+			m_LocalX = transform.right.normalized;
+			m_LocalY = transform.up.normalized;
 		}
 		
 		if (Input.GetMouseButton(0))

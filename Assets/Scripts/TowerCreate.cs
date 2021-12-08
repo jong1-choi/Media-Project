@@ -44,8 +44,14 @@ namespace MediaProject
 			// 생성될 타워의 위치, 방향 설정
 			Transform towerPrefab = Disc.discInfo[diskNum].towerPrefab.transform;
 			towerPrefab.position = discSet[diskNum].position;
-			Quaternion directionToSphere = Quaternion.FromToRotation(towerPrefab.up, (towerPrefab.position - new Vector3(0,0,0)).normalized) * towerPrefab.localRotation;
+			Quaternion directionToSphere = Quaternion.FromToRotation(towerPrefab.up,
+				(towerPrefab.position - new Vector3(0, 0, 0)).normalized);
+			
+			print(directionToSphere);
+			
 			towerPrefab.transform.rotation = directionToSphere;
+			
+			
 			
 			// pooling된 프리팹을 Active한 후 설정된 타입, 레벨에 해당하는 타워를 Active
 			towerPrefab.gameObject.SetActive(true);
