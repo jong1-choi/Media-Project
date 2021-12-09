@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using MediaProject;
-using TreeEditor;
+// using TreeEditor;
 using UnityEngine;
 
 public class DetectEnemy : MonoBehaviour
