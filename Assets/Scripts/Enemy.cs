@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,8 +20,9 @@ namespace MediaProject
 		private float minDistance = 1.0f;
 
 		[SerializeField] private ParticleSystem hurtParticle;
-		private float hp = 10.0f;
+		[SerializeField] protected float hp = 10.0f;
     
+		
 		void Start()
 		{
 			waypoints = GameManager.Instance.Waypoints;
@@ -29,6 +31,15 @@ namespace MediaProject
 			targetWaypoint = waypoints[targetWayPointIndex];
 			lastWayPointIndex = waypoints.Count - 1;
 		}
+
+
+		void OnEnable()
+		{
+			hp = 10f;
+			targetWayPointIndex = 0;
+			if(waypoints.Count != 0) targetWaypoint = waypoints[targetWayPointIndex];
+		}
+
 
 		void FixedUpdate()
 		{
@@ -80,7 +91,7 @@ namespace MediaProject
 		}
 		
 		// damage를 입을 때 호출.
-		public void TakeDamage( float damage )
+		public virtual void TakeDamage( float damage )
 		{
 			// hp를 깎고, 맞는 소리를 재생.
 			hp -= damage;
@@ -92,7 +103,7 @@ namespace MediaProject
 		}
 		
 		// damage를 입을 때 호출. 맞는 방향으로 particle이 튀도록 함.
-		public void TakeDamage( float damage, Quaternion dir )
+		public virtual void TakeDamage( float damage, Quaternion dir )
 		{
 			// hp를 깎고, 맞는 소리를 재생.
 			hp -= damage;
@@ -110,9 +121,27 @@ namespace MediaProject
 		}
 		
 		// Enemy가 죽을 때 호출해서 사용.
-		private void Dead()
+		protected virtual void Dead()
 		{
+			GameManager.Instance.AddLiveEnemyNum(-1);
 			gameObject.SetActive(false);
+		}
+
+		// Enemy가 목적지에 도달할 때 사용.
+		private void ArriveGoal()
+		{
+			
+		}
+
+		protected virtual void OnTriggerEnter(Collider other)
+		{
+			if (other.CompareTag("Destination"))
+			{
+				GameManager.Instance.AddLife(-1);
+				GameManager.Instance.AddLiveEnemyNum(-1);
+				AudioManager.Instance.Play(1);
+				gameObject.SetActive(false);
+			}
 		}
 	}
 }

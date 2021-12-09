@@ -33,6 +33,7 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] private int towerCount = 5;
     [SerializeField] private bool towerMore = true;
 
+
     // enemy를 생성하기 전에 다른 Script에서 접근하면 안돼서,
     // Start()보다 빠른 Awake()에서 생성 함수(Create())를 호출.
     void Awake()

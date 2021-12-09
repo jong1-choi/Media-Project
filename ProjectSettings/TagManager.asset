@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Disc
   - Enemy
+  - Destination
   layers:
   - Default
   - TransparentFX

@@ -9,11 +9,12 @@ public class GameManager : MonoBehaviour
 {
     // Singleton
     private static GameManager instance;
+
     public static GameManager Instance
     {
         get
         {
-            if (!instance) 
+            if (!instance)
                 instance = FindObjectOfType<GameManager>();
             return instance;
         }
@@ -21,16 +22,17 @@ public class GameManager : MonoBehaviour
 
     // Object Pool class
     [SerializeField] private ObjectPool objectPool;
-    
+
     // Sphere planet
     public Transform planet;
 
     // Castle
     [SerializeField] private Transform startPoint;
-    
+
     // Waypoint
     public GameObject wayPoint;
     public List<Transform> waypoints = new List<Transform>();
+
     public List<Transform> Waypoints
     {
         get { return waypoints; }
@@ -38,34 +40,59 @@ public class GameManager : MonoBehaviour
     }
 
     // Timer
+    [SerializeField] public GameObject timerPanel;
     [SerializeField] private Text timeText;
-    [SerializeField] private float buildTime = 15f;
-    [SerializeField] private float playTime = 30f;
-    private float timeRemaining; // 임시로 정함.
+    [SerializeField] private float peacefulTime = 5f;
+    private float timeRemaining;
 
     // State
-    private int currentStage; // 0부터. (Player에게 보여지는 건 1부터.)
+    public int currentStage; // 0부터. (Player에게 보여지는 건 1부터.)
+    private int curEnemyIndex;
     [SerializeField] private Text stageText;
+
     public enum CurState
     {
-        Building,
+        Peaceful,
         Playing
     };
+
     public CurState curState;
 
-    
-    void Start()
+    [SerializeField] private GameObject liveNumPanel;
+    [SerializeField] private Text liveNumText;
+    private int[] stageEnemyNumList = {7, 8, 9, 10, 1, 11, 12, 13, 1, 14, 15, 16, 1};
+    public int curLiveEnemyNum = 0;
+
+    [SerializeField] private List<GameObject> bosses;
+
+    [SerializeField] private Text lifeText;
+    [SerializeField] private int life = 20;
+
+
+
+
+void Start()
     {
+        curEnemyIndex = 0;
         currentStage = 0;
-        timeRemaining = buildTime;
-        curState = CurState.Building;
+        timeRemaining = peacefulTime;
+        curState = CurState.Peaceful;
         stageText.text = "Stage 1";
+        liveNumText.text = "0 / 0";
     }
 
 
     void Update()
     {
-        RunTimer();
+        if (curState == CurState.Playing)
+        {
+            
+        }
+        else if (curState == CurState.Peaceful)
+        {
+            RunTimer();    
+        }
+        
     }
     
 
@@ -80,21 +107,50 @@ public class GameManager : MonoBehaviour
         enemy.transform.rotation = Quaternion.identity;
         enemy.SetActive(true);
     }
+
     
-    
-    private IEnumerator SpawnWithTime()
+    private void SpawnBoss( int index )
     {
-        // Test: 7마리 적을 1.5초 간격으로 생성
-        int count = 7;
-        while (count-- != 0)
+        if (bosses.Count < index + 1)
+        {
+            print("GameManager.SpawnBoss() : boss 개수보다 큰 index 들어옴.");
+            return;
+        }
+
+        UIManager.Instance.OpenBossHPPanel();
+        Instantiate(bosses[index], startPoint.position, Quaternion.identity);
+        curEnemyIndex--;
+    }
+    
+    
+    // 일정 시간 간격으로 적을 Spawn 해주는 코루틴.
+    private IEnumerator SpawnWithTime(int enemyNum)
+    {
+        // Test: enemyNum만큼 적을 1.5초 간격으로 생성
+        while (enemyNum-- != 0)
         {
             // 현재 stage에 맞는 적 생성
-            Spawn( currentStage );
-            yield return new WaitForSeconds(1.5f);
+            switch (currentStage)
+            {
+                case 4: // 1 Boss
+                    SpawnBoss(0);
+                    break;
+                case 8: // 2 Boss
+                    SpawnBoss(1);
+                    break;
+                case 12: // 3 Boss
+                    SpawnBoss(2);
+                    break;
+                default:
+                    Spawn( curEnemyIndex );
+                    break;
+            }
+            yield return new WaitForSeconds(0.5f);
         }
     }
     
     
+    // Timer 작동, Timer가 다 되었을 때 처리.
     private void RunTimer()
     {
         timeRemaining -= Time.deltaTime;
@@ -102,41 +158,96 @@ public class GameManager : MonoBehaviour
         // 시간이 다 지났을 때.
         if (timeRemaining <= 0)
         {
-            switch (curState)
-            {
-                case CurState.Building: // Building 시간이 끝났을 경우 동작.
-                    StopCoroutine(SpawnWithTime());
-                    StartCoroutine(SpawnWithTime());
-                    SetPlayingState();
-                    break;
-                case CurState.Playing:  // Playing 시간이 끝났을 경우 동작.
-                    currentStage++;
-                    SetBuildingState();
-                    break;
-                default:
-                    print("Exception Case: RunTimer() in GameManager class.");
-                    break;
-            }
+            StopCoroutine(SpawnWithTime(stageEnemyNumList[currentStage]));
+            StartCoroutine(SpawnWithTime(stageEnemyNumList[currentStage]));
+            SetPlayingState();
         }
         DisplayTime(timeRemaining);
     }
+    
+    
+    // ioClose : true => Timer UI가 숨겨짐.
+    // ioClose : false => Timer 적 UI가 보여짐.
+    public void TimerClose(bool isClose)
+    {
+        if (!timerPanel) return;
+        
+        Animator animator = timerPanel.GetComponent<Animator>();
+        if (!animator) return;
 
+        animator.SetBool("close", isClose);
+    }
+    
+    
+    // ioOpen : true => 살아있는 적 UI가 보여짐.
+    // ioOpen : false => 살아있는 적 UI가 숨겨짐.
+    public void LiveNumOpen(bool isOpen)
+    {
+        if (!liveNumPanel) return;
+        
+        Animator animator = liveNumPanel.GetComponent<Animator>();
+        if (!animator) return;
 
+        animator.SetBool("open", isOpen);
+    }
+
+    
+    // 현재 살아있는 적 UI 업데이트.
+    private void UpdateLiveEnemyNumText()
+    {
+        liveNumText.text = curLiveEnemyNum + " / " + stageEnemyNumList[currentStage];
+    }
+    
+    
+    // Life UI 업데이트.
+    private void UpdateLifeText()
+    {
+        lifeText.text = life.ToString();
+    }
+    
+    
+    // 적의 수를 더해줌. 적이 죽을 때 num = -1 로 넘겨줌.
+    public void AddLiveEnemyNum(int num)
+    {
+        curLiveEnemyNum += num;
+        CheckExistEnemy();
+        UpdateLiveEnemyNumText();
+    }
+    
+
+    // 현재 스테이지에 적이 존재하는지 체크.
+    private void CheckExistEnemy()
+    {
+        if (curLiveEnemyNum > 0) return;
+        currentStage++;
+        curEnemyIndex++;
+        stageText.text = "Stage " + (currentStage+1); // 사용자에게 보여주기 위해 1을 더함. (사용자는 Stage 1부터임)
+        SetPeacefulState();
+    }
+    
+    
+    // Peaceful 상태로 넘어갈 때 설정들.
+    private void SetPeacefulState()
+    {
+        timeRemaining = peacefulTime;
+        curState = CurState.Peaceful;
+        TimerClose(false);
+        LiveNumOpen(false);
+    }
+    
+    
+    // Playing 상태로 넘어갈 때 설정들.
     private void SetPlayingState()
     {
-        stageText.text = "Stage " + (currentStage+1);
-        timeRemaining = playTime; 
+        curLiveEnemyNum = stageEnemyNumList[currentStage];
         curState = CurState.Playing;
-    }
-
-
-    private void SetBuildingState()
-    {
-        timeRemaining = buildTime; 
-        curState = CurState.Building;
+        UpdateLiveEnemyNumText();
+        TimerClose(true);
+        LiveNumOpen(true);
     }
     
     
+    // Timer 분 : 초 단위로 보여주기.
     private void DisplayTime( float time )
     {
         if (time <= 0)
@@ -149,5 +260,32 @@ public class GameManager : MonoBehaviour
         float minutes = Mathf.FloorToInt(time / 60);
         float seconds = Mathf.FloorToInt(time % 60);
         timeText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+    }
+    
+    
+    // Life를 더해줌. 적이 목적지에 도달했을 때 -1을 넘겨줌.
+    public void AddLife(int num)
+    {
+        life += num;
+        CheckLife();
+    }
+
+
+    private void CheckLife()
+    {
+        if (life <= 0)
+        {
+            GameOver();
+        }
+        else
+        {
+            UpdateLifeText();
+        }
+    }
+    
+    
+    private void GameOver()
+    {
+        UIManager.Instance.OpenGameOverPanel();
     }
 }

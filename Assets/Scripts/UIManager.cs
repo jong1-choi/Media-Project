@@ -41,8 +41,14 @@ public class UIManager : MonoBehaviour
     private bool VibeOn = true;
 
     [SerializeField] private GameObject HUDCanvas;
-
+ 
+    [SerializeField] private GameObject pauseButton;
     private bool gameIsPaused = false;
+
+    [SerializeField] private GameObject gameOverPanel;
+
+    [SerializeField] private GameObject bossHPPanel;
+    [SerializeField] public Slider HPSlider;
     
     
     void Start()
@@ -155,6 +161,32 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         AudioListener.pause = false;
     }
+
+
+    public void UpdateHP(float value)
+    {
+        HPSlider.value = value;
+    }
+    
+
+    public void ClosePauseButton()
+    {
+        if (pauseButton == null)
+        {
+            print("pauseButton is null");
+            return;
+        }
+
+        Animator animator = pauseButton.GetComponent<Animator>();
+        if (animator == null)
+        {
+            print("pauseButton animator is null");
+            return;
+        }
+        
+        bool isClose = animator.GetBool("close");
+        animator.SetBool("close", !isClose);
+    }
     
 
     public void CloseHUD()
@@ -166,6 +198,18 @@ public class UIManager : MonoBehaviour
 
         bool isClose = animator.GetBool("close");
         animator.SetBool("close", !isClose);
+    }
+    
+    
+    public void CloseHUD(bool b)
+    {
+        if (HUDCanvas == null) return;
+
+        Animator animator = HUDCanvas.GetComponent<Animator>();
+        if (animator == null) return;
+
+        bool isClose = animator.GetBool("close");
+        animator.SetBool("close", b);
     }
     
 
@@ -190,6 +234,34 @@ public class UIManager : MonoBehaviour
         if (textPanel == null) return;
         
         Animator animator = textPanel.GetComponent<Animator>();
+        if (animator == null) return;
+        
+        bool isOpen = animator.GetBool("open");
+        animator.SetBool("open", !isOpen);
+        
+        ClosePauseButton();
+    }
+
+
+    public void OpenGameOverPanel()
+    {
+        if (gameOverPanel == null) return;
+        
+        Animator animator = gameOverPanel.GetComponent<Animator>();
+        if (animator == null) return;
+        
+        bool isOpen = animator.GetBool("open");
+        animator.SetBool("open", !isOpen);
+        
+        CloseHUD(true);
+    }
+    
+    
+    public void OpenBossHPPanel()
+    {
+        if (bossHPPanel == null) return;
+        
+        Animator animator = bossHPPanel.GetComponent<Animator>();
         if (animator == null) return;
         
         bool isOpen = animator.GetBool("open");
