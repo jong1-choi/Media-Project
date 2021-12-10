@@ -19,7 +19,7 @@ namespace MediaProject
 		private float minDistance = 1.0f;
 
 		[SerializeField] private ParticleSystem hurtParticle;
-		private float hp = 10.0f;
+		public float hp = 10.0f;
     
 		void Start()
 		{
