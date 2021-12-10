@@ -145,7 +145,7 @@ void Start()
                     Spawn( curEnemyIndex );
                     break;
             }
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1.5f);
         }
     }
     
