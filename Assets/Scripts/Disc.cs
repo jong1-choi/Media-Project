@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace MediaProject
 {
+	// [ExecuteInEditMode]
 	public class Disc : MonoBehaviour
 	{
 		[SerializeField] private Transform planet;
@@ -27,7 +28,7 @@ namespace MediaProject
 			}
 			SettingDiscs();
 		}
-
+		
 		private void SettingDiscs()
 		{
 			float radius = planet.GetComponent<SphereCollider>().radius;

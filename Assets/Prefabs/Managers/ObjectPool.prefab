@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4257082827618379032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4257082827618379038}
+  - component: {fileID: 4257082827618379039}
+  m_Layer: 0
+  m_Name: ObjectPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4257082827618379038
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4257082827618379032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4257082827618379039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4257082827618379032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88e97ec00f8360f4f962b7fc246193df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPoolObj: {fileID: 0}
+  enemies:
+  - {fileID: 3607088120601887423, guid: d41637b83dff640269551d9c092802f0, type: 3}
+  - {fileID: 3994785945262754013, guid: b968b8ca2920c4497b101358d8666f3c, type: 3}
+  - {fileID: 6045175402109242002, guid: 956fc2f44f571477f9ca5fabc2ed4d58, type: 3}
+  - {fileID: 7472954939728859666, guid: 194a6f3074b1e46d898fadb69e1f10a5, type: 3}
+  - {fileID: 5465060268525794125, guid: 8bd8573aacc744fa18d6b25cc01efd54, type: 3}
+  - {fileID: 7690907527824794656, guid: fcf4f410309754e2b9e9a8abb1ac82c2, type: 3}
+  - {fileID: 3917250480545050381, guid: bdd906d6fb0264c6eb293ddb5cbe04b3, type: 3}
+  - {fileID: 4380592338757483591, guid: 60960a26bc7b344e7a2910a5cdc15651, type: 3}
+  - {fileID: 6646909101577997468, guid: 97f2e9bedd6c6456a8aa900ceb1fe440, type: 3}
+  - {fileID: 7314050168954492760, guid: d8421237728f0425c90998b53a51d102, type: 3}
+  enemyCount: 5
+  enemyMore: 1
+  towerPoolObj: {fileID: 0}
+  towers:
+  - {fileID: 6875952097996156388, guid: 0ab9cf6579e24494f8009cfde20abe37, type: 3}
+  - {fileID: 2505318761810033510, guid: bdc62090de2fd49a88d178e05eaba0f2, type: 3}
+  towerCount: 5
+  towerMore: 1
+  bulletPoolObj: {fileID: 0}
+  bullets:
+  - {fileID: 8970971475313733702, guid: d9b760d5c852e4449a62b6d6d86c1c85, type: 3}
+  bulletCount: 5
+  bulletMore: 1

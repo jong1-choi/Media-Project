@@ -7,25 +7,25 @@ using UnityEngine;
 
 public class DetectEnemy : MonoBehaviour
 {
-    private bool isEnemyDetected;
-    private Transform target;
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private int towerRange = 5;
+    public static bool isEnemyDetected;
+    public static Transform target;
+    public static int bulletCount;
     private Collider[] targetEnemy;
+    private bool delayCheck = true;
     
     private void FindEnemy()
     {
-        targetEnemy = Physics.OverlapSphere(transform.position, 5);
+        targetEnemy = Physics.OverlapSphere(transform.position, towerRange);
         foreach (var element in targetEnemy)
         {
             if (element.CompareTag("Enemy"))
             {
                 target = element.gameObject.transform;
-                // Debug.Log("FindEnemy");
                 isEnemyDetected = true;
             }
         }
-        // 타겟이 타워의 범위를 벗어났을 때 회전처리
-        
-        // Debug.Log("NoEnemy");
     }
 
     private void RotateTower(float speed = 1f)
@@ -38,21 +38,44 @@ public class DetectEnemy : MonoBehaviour
         transform.LookAt(transform.position + towerToTargetOnPlane, towerInitialPos);
     }
 
+    private void ShootBullet()
+    {
+        if(bulletCount > 2) return;
+        bulletCount++;
+        // bullet.transform.position = transform.position;
+        Instantiate(bullet, transform.position + transform.up, Quaternion.identity);
+        StartCoroutine(this.ShootDelay());
+    }
+
+    IEnumerator ShootDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        delayCheck = true;
+    }
+    
     void Update()
     {
         if (!isEnemyDetected)
         {
             FindEnemy();
         }
+        
         else
         {
             this.RotateTower();
             
-            if (Vector3.Distance(transform.position, target.transform.position) > 10)
+            if (delayCheck)
+            {
+                delayCheck = false;
+                ShootBullet();
+                StartCoroutine(this.ShootDelay());
+            }
+
+            if (Vector3.Distance(transform.position, target.transform.position) > 10
+                || target.gameObject.GetComponent<Enemy>().hp == 0)
             {
                 isEnemyDetected = false;
             }
-            // 캐릭터가 죽었을때도 추가
         }
     }
 }

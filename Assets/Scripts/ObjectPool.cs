@@ -33,6 +33,12 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] private int towerCount = 5;
     [SerializeField] private bool towerMore = true;
 
+    [SerializeField] private GameObject bulletPoolObj;
+    private List<List<GameObject>> bulletPools;
+    [SerializeField] public List<GameObject> bullets;
+    [SerializeField] private int bulletCount = 5;
+    [SerializeField] private bool bulletMore = true;
+
 
     // enemy를 생성하기 전에 다른 Script에서 접근하면 안돼서,
     // Start()보다 빠른 Awake()에서 생성 함수(Create())를 호출.
@@ -66,6 +72,19 @@ public class ObjectPool : MonoBehaviour
                 obj.transform.parent = towerPoolObj.transform;
                 obj.SetActive(false);
                 towerPools[i].Add(obj);
+            }
+        } 
+        
+        bulletPools = new List<List<GameObject>>();
+        for(int i=0; i< bullets.Count; i++)
+        {
+            bulletPools.Add(new List<GameObject>());
+            for (int j = 0; j < bulletCount; j++)
+            {
+                GameObject obj = Instantiate(bullets[i]);
+                obj.transform.parent = bulletPoolObj.transform;
+                obj.SetActive(false);
+                bulletPools[i].Add(obj);
             }
         } 
     }
@@ -112,4 +131,21 @@ public class ObjectPool : MonoBehaviour
         return null;
     }
 
+    
+    public GameObject GetBulletObject(int index)
+    {
+        foreach (GameObject obj in bulletPools[index])
+        {
+            if (!obj.activeInHierarchy) return obj;
+        }
+        
+        if (bulletMore)
+        {
+            GameObject obj = Instantiate(bullets[index]);
+            obj.transform.parent = bulletPoolObj.transform;
+            bulletPools[index].Add(obj);
+            return obj;
+        }
+        return null;
+    }
 }
