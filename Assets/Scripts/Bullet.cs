@@ -8,15 +8,21 @@ namespace MediaProject
 {
     public class Bullet : MonoBehaviour
     {
-        private float damage = 2.0f;
-        public static bool isShooting = false;
+        private float damage = 1.0f;
         private Transform target;
+        private GameObject tower;
+        private Enemy enemyScript;
 
-        private void Start()
+        // private void Start()
+        // {
+        //     enemyScript = target.GetComponent<Enemy>();
+        // }
+        
+        public void GiveTarget(Transform target)
         {
-            target = DetectEnemy.target;
+            this.target = target;
         }
-
+        
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Enemy"))
@@ -28,17 +34,13 @@ namespace MediaProject
                 enemy.TakeDamage(damage, transform.localRotation);
 
                 AudioManager.Instance.Play(0);
-
-                isShooting = false;
-                DetectEnemy.bulletCount--;
-                Destroy(this.gameObject);
+                DetectEnemy.getTarget.Remove(this.GetInstanceID());
+                gameObject.SetActive(false);
             }
         }
 
         private void MoveToTarget()
         {
-            if(!DetectEnemy.isEnemyDetected) return;
-            isShooting = true;
             Vector3 dir = (target.position - transform.position).normalized;
             transform.position += dir * (Time.deltaTime * 20);
             transform.forward = dir;
@@ -47,13 +49,11 @@ namespace MediaProject
         private void FixedUpdate()
         {
             this.MoveToTarget();
-            if (target.gameObject.GetComponent<Enemy>().hp == 0)
-            {
-                Debug.Log("enemy already die");
-                isShooting = false;
-                DetectEnemy.bulletCount--;
-                Destroy(this.gameObject);
-            }
+            // if (enemyScript.hp == 0)
+            // {
+            //     Debug.Log("enemy already die");
+            //     gameObject.SetActive(false);
+            // }
         }
     }
 }

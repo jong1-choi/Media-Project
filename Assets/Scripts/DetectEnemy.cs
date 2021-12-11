@@ -7,14 +7,24 @@ using UnityEngine;
 
 public class DetectEnemy : MonoBehaviour
 {
-    [SerializeField] private GameObject bullet;
     [SerializeField] private int towerRange = 5;
-    public static bool isEnemyDetected;
-    public static Transform target;
-    public static int bulletCount;
+    // [SerializeField] private ObjectPool objectPool;
+    public bool isEnemyDetected;
+    public Transform target;
     private Collider[] targetEnemy;
     private bool delayCheck = true;
-    
+    private ObjectPool objectPool;
+    private Enemy enemyScript;
+    private GameObject obj;
+
+    public static Dictionary<int, Transform> getTarget;
+
+    private void Awake()
+    {
+        objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
+        getTarget = new Dictionary<int, Transform>();
+    }
+
     private void FindEnemy()
     {
         targetEnemy = Physics.OverlapSphere(transform.position, towerRange);
@@ -23,6 +33,7 @@ public class DetectEnemy : MonoBehaviour
             if (element.CompareTag("Enemy"))
             {
                 target = element.gameObject.transform;
+                enemyScript = target.GetComponent<Enemy>();
                 isEnemyDetected = true;
             }
         }
@@ -40,11 +51,27 @@ public class DetectEnemy : MonoBehaviour
 
     private void ShootBullet()
     {
-        if(bulletCount > 2) return;
-        bulletCount++;
-        // bullet.transform.position = transform.position;
-        Instantiate(bullet, transform.position + transform.up, Quaternion.identity);
-        StartCoroutine(this.ShootDelay());
+        // BulletInfo obj = objectPool.GetBulletObject(0, target.gameObject);
+        // GameObject bullet = obj.bulletPrefab;
+        obj = objectPool.GetBulletObject(0);
+        
+        /*
+        if (getTarget[obj.transform.GetInstanceID()])
+        {
+            getTarget.Add(obj.transform.GetInstanceID(), target);
+        }
+        else
+        {
+            getTarget[obj.transform.GetInstanceID()] = target;
+        }
+        
+        Debug.Log("tower" + transform.GetInstanceID());
+        */
+        obj.SetActive(true);
+        obj.transform.position = transform.position + transform.up;
+        obj.transform.rotation = Quaternion.identity;
+        obj.GetComponent<Bullet>().GiveTarget(target);
+
     }
 
     IEnumerator ShootDelay()
@@ -71,9 +98,14 @@ public class DetectEnemy : MonoBehaviour
                 StartCoroutine(this.ShootDelay());
             }
 
-            if (Vector3.Distance(transform.position, target.transform.position) > 10
-                || target.gameObject.GetComponent<Enemy>().hp == 0)
+            if (Vector3.Distance(transform.position, target.transform.position) > towerRange)
             {
+                isEnemyDetected = false;
+            }
+
+            if (enemyScript.hp == 0)
+            {
+                obj.SetActive(false);
                 isEnemyDetected = false;
             }
         }
