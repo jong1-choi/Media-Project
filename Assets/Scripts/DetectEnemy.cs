@@ -51,22 +51,7 @@ public class DetectEnemy : MonoBehaviour
 
     private void ShootBullet()
     {
-        // BulletInfo obj = objectPool.GetBulletObject(0, target.gameObject);
-        // GameObject bullet = obj.bulletPrefab;
         obj = objectPool.GetBulletObject(0);
-        
-        /*
-        if (getTarget[obj.transform.GetInstanceID()])
-        {
-            getTarget.Add(obj.transform.GetInstanceID(), target);
-        }
-        else
-        {
-            getTarget[obj.transform.GetInstanceID()] = target;
-        }
-        
-        Debug.Log("tower" + transform.GetInstanceID());
-        */
         obj.SetActive(true);
         obj.transform.position = transform.position + transform.up;
         obj.transform.rotation = Quaternion.identity;
@@ -98,7 +83,8 @@ public class DetectEnemy : MonoBehaviour
                 StartCoroutine(this.ShootDelay());
             }
 
-            if (Vector3.Distance(transform.position, target.transform.position) > towerRange)
+            if (Vector3.Distance(transform.position, target.transform.position) > towerRange
+                || enemyScript.isArrived)
             {
                 isEnemyDetected = false;
             }

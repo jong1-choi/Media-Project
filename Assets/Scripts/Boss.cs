@@ -19,6 +19,7 @@ public class Boss : Enemy
     {
 	    UIManager.Instance.OpenBossHPPanel();
     	GameManager.Instance.AddLiveEnemyNum(-1);
+        isArrived = true;
     	gameObject.SetActive(false);
     }
 }

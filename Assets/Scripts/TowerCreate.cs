@@ -19,11 +19,10 @@ namespace MediaProject
 		public static int upgradeDiskNum;
 		private List<Transform> discSet;
 
-		private Text message;
+		public int createTowerPrice = 10;
 		
 		private void Awake()
 		{
-			message = UIManager.Instance.installText;
 			discSet = this.GetComponent<Disc>().discs;
 			
 		}
@@ -59,25 +58,24 @@ namespace MediaProject
 			print(Disc.discInfo[diskNum].towerLevel);
 		}
 
-		IEnumerator MaxTowerLevel()
+		IEnumerator WrongMsg(String text)
 		{
 			// 잘못된 타워를 설치하면 2초간 메세지를 띄워줌
 			isTowerButtonOn = false;
-			message.text = "타워의 레벨이 최대치입니다.";
-			yield return new WaitForSeconds(2);
-			UIManager.Instance.OpenTextPanel();
-			message.text = "";
+			UIManager.Instance.UpdateSystemText(text);
+			UIManager.Instance.IsWrongTextOpen = true; // true일 때는 UI가 안 내려가도록 제어함.
+			yield return new WaitForSeconds(2f);
+			UIManager.Instance.OpenTextPanel(true);
+			UIManager.Instance.IsWrongTextOpen = false;
+			UIManager.Instance.UpdateSystemText("");
 		}
 		
 		private void Update()
 		{
-			// 현재 상태 검사
-			// if (!(GameManager.Instance.curState == GameManager.CurState.Building)) return;
-			
 			if(!isTowerButtonOn || isUpgrade) return;
 
 			// tower 버튼 클릭시 메세지 출력
-			message.text = "타워를 설치할 영역을 클릭해주세요";
+			UIManager.Instance.UpdateSystemText("타워를 설치할 영역을 클릭해주세요");
 
 			if (Input.GetMouseButtonUp(0)) // tower 버튼을 누르고 디스크를 클릭 했을 때
 			{
@@ -94,9 +92,17 @@ namespace MediaProject
 					
 					if (Disc.discInfo[diskIndex].towerLevel == 0)
 					{
-						Create(diskIndex);
-						message.text = "";
-						UIManager.Instance.OpenTextPanel();
+						// 설치 비용 검사
+						if (!GameManager.Instance.PayMoney(createTowerPrice))
+						{
+							StartCoroutine(WrongMsg("설치 비용이 부족합니다.\n설치비용 : " + createTowerPrice));
+						}
+						else
+						{
+							Create(diskIndex);
+							UIManager.Instance.UpdateSystemText("");
+							UIManager.Instance.OpenTextPanel();	
+						}
 					}
 					
 					else if (Disc.discInfo[diskIndex].towerLevel > 0 && Disc.discInfo[diskIndex].towerLevel < 4)
@@ -105,11 +111,11 @@ namespace MediaProject
 						isUpgrade = true;
 						// 업그레이드 처리를 위해 받아온 diskIndex를 넘겨줌
 						upgradeDiskNum = diskIndex;
-						message.text = "";
+						UIManager.Instance.UpdateSystemText("");
 					}
 					else
 					{
-						StartCoroutine(MaxTowerLevel());
+						StartCoroutine(WrongMsg("타워의 레벨이 최대치입니다."));
 					}
 					
 				}

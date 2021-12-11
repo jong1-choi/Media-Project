@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject liveNumPanel;
     [SerializeField] private Text liveNumText;
-    private int[] stageEnemyNumList = {7, 8, 9, 10, 1, 11, 12, 13, 1, 14, 15, 16, 1};
+    private int[] stageEnemyNumList = {20, 22, 24, 26, 1, 28, 30, 32, 1, 34, 36, 38, 1};
     public int curLiveEnemyNum = 0;
 
     [SerializeField] private List<GameObject> bosses;
@@ -68,10 +68,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text lifeText;
     [SerializeField] private int life = 20;
 
+    [SerializeField] private Text moneyText;
+    private int money = 100;
 
 
 
-void Start()
+    void Start()
     {
         curEnemyIndex = 0;
         currentStage = 0;
@@ -79,6 +81,7 @@ void Start()
         curState = CurState.Peaceful;
         stageText.text = "Stage 1";
         liveNumText.text = "0 / 0";
+        UpdateMoneyText();
     }
 
 
@@ -86,7 +89,8 @@ void Start()
     {
         if (curState == CurState.Playing)
         {
-            
+            // Play 상태일 때.
+            // 현재 콘텐츠에서는 할 동작이 아무것도 없음.
         }
         else if (curState == CurState.Peaceful)
         {
@@ -204,6 +208,12 @@ void Start()
     {
         lifeText.text = life.ToString();
     }
+
+
+    private void UpdateMoneyText()
+    {
+        moneyText.text = money.ToString();
+    }
     
     
     // 적의 수를 더해줌. 적이 죽을 때 num = -1 로 넘겨줌.
@@ -271,6 +281,7 @@ void Start()
     }
 
 
+    // Life가 있는지 확인.
     private void CheckLife()
     {
         if (life <= 0)
@@ -284,8 +295,30 @@ void Start()
     }
     
     
+    // GameOver 되었을 때.
     private void GameOver()
     {
         UIManager.Instance.OpenGameOverPanel();
+    }
+
+
+    // money를 더하고 UI를 업데이트.
+    public void AddMoney(int amount)
+    {
+        money += amount;
+        UpdateMoneyText();
+    }
+
+
+    // money 지불. 부족하면 false. 충분하면 돈 깎고 true.
+    public bool PayMoney(int amount)
+    {
+        int updateMoney = money - amount;
+        if (updateMoney < 0)
+            return false;
+
+        money = updateMoney;
+        UpdateMoneyText();
+        return true;
     }
 }

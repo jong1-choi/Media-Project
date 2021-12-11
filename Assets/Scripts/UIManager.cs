@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -27,8 +28,13 @@ public class UIManager : MonoBehaviour
     private float sfx;
 
     [SerializeField] private GameObject textPanel;
-    [SerializeField] public Text installText;
-    [SerializeField] public Text upgradeText;
+    [SerializeField] public Text systemText;
+    private bool isWrongTextOpen;
+    public bool IsWrongTextOpen
+    {
+        get { return isWrongTextOpen; }
+        set { isWrongTextOpen = value; }
+    }
 
     [SerializeField] private GameObject optionPanel;
     [SerializeField] private GameObject maskPanel;
@@ -49,10 +55,12 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject bossHPPanel;
     [SerializeField] public Slider HPSlider;
+
     
     
     void Start()
     {
+        IsWrongTextOpen = false;
         initAudio();
     }
 
@@ -167,6 +175,12 @@ public class UIManager : MonoBehaviour
     {
         HPSlider.value = value;
     }
+
+
+    public void UpdateSystemText(String text)
+    {
+        systemText.text = text;
+    }
     
 
     public void ClosePauseButton()
@@ -229,17 +243,36 @@ public class UIManager : MonoBehaviour
     }
     
 
-    public void OpenTextPanel()
+    public void OpenTextPanel(bool isWrongText = false)
     {
         if (textPanel == null) return;
-        
         Animator animator = textPanel.GetComponent<Animator>();
         if (animator == null) return;
         
-        bool isOpen = animator.GetBool("open");
-        animator.SetBool("open", !isOpen);
-        
-        ClosePauseButton();
+        if (IsWrongTextOpen) // Wrong text 가 띄워져 있을 때
+        {
+            if (!isWrongText) // Tower Button 클릭 했을 때
+            {
+                IsWrongTextOpen = false;
+            }
+            else // (Tower Button 클릭 없이) 2초 지났을 때
+            {
+                bool isOpen = animator.GetBool("open");
+                animator.SetBool("open", !isOpen);
+                ClosePauseButton();                
+            }
+        }
+        else if (!IsWrongTextOpen && isWrongText)
+        {
+            // Wrong text 띄워져 있을 때 Tower Button 클릭했고, 2초 지났을 때
+            // Nothing...
+        }
+        else
+        {
+            bool isOpen = animator.GetBool("open");
+            animator.SetBool("open", !isOpen);
+            ClosePauseButton();
+        }
     }
 
 
@@ -267,4 +300,5 @@ public class UIManager : MonoBehaviour
         bool isOpen = animator.GetBool("open");
         animator.SetBool("open", !isOpen);
     }
+    
 }
