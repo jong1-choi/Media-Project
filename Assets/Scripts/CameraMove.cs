@@ -11,7 +11,7 @@ public class CameraMove : MonoBehaviour
 
 	void Start()
 	{
-		if (Application.platform == RuntimePlatform.Android)
+		if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
 		{
 			m_LookSpeed = 1;
 		}		
