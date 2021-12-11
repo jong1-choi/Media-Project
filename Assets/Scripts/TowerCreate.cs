@@ -25,6 +25,7 @@ namespace MediaProject
 		{
 			message = UIManager.Instance.installText;
 			discSet = this.GetComponent<Disc>().discs;
+			
 		}
 
 		public void TowerInstall()
@@ -49,12 +50,8 @@ namespace MediaProject
 			towerPrefab.position = discSet[diskNum].position;
 			Quaternion directionToSphere = Quaternion.FromToRotation(towerPrefab.up,
 				(towerPrefab.position - new Vector3(0, 0, 0)).normalized);
-			
-			print(directionToSphere);
-			
+
 			towerPrefab.transform.rotation = directionToSphere;
-			
-			
 			
 			// pooling된 프리팹을 Active한 후 설정된 타입, 레벨에 해당하는 타워를 Active
 			towerPrefab.gameObject.SetActive(true);

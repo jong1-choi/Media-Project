@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f147f01e6b94749f19613fffd36a7d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  towerRange: 5
+  isEnemyDetected: 0
+  target: {fileID: 0}
 --- !u!114 &3859798759020230655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25,7 +27,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f147f01e6b94749f19613fffd36a7d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  towerRange: 5
+  isEnemyDetected: 0
+  target: {fileID: 0}
 --- !u!114 &3819771832205012739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38,7 +42,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f147f01e6b94749f19613fffd36a7d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8970971475313733702, guid: d9b760d5c852e4449a62b6d6d86c1c85, type: 3}
+  towerRange: 5
+  isEnemyDetected: 0
+  target: {fileID: 0}
 --- !u!1 &6875952097996156388
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,7 +91,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f147f01e6b94749f19613fffd36a7d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  towerRange: 5
+  isEnemyDetected: 0
+  target: {fileID: 0}
 --- !u!1001 &4294000576740854481
 PrefabInstance:
   m_ObjectHideFlags: 0
