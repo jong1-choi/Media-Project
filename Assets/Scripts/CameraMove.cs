@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CameraMove : MonoBehaviour
@@ -7,6 +8,16 @@ public class CameraMove : MonoBehaviour
 	private Vector3 m_LocalX;
 	private Vector3 m_LocalY;
 
+
+	void Start()
+	{
+		if (Application.platform == RuntimePlatform.Android)
+		{
+			m_LookSpeed = 1;
+		}		
+	}
+
+	
 	public void Look()
 	{
 		float deltaX = Input.GetAxis("Mouse X") * m_LookSpeed;
@@ -20,6 +31,9 @@ public class CameraMove : MonoBehaviour
 		
 		if (Input.GetMouseButton(0))
 		{
+			m_LocalX = transform.right.normalized;
+			m_LocalY = transform.up.normalized;
+			
 			transform.RotateAround(m_Origin, m_LocalX, -deltaY);
 			transform.RotateAround(m_Origin, m_LocalY, deltaX);
 		}
