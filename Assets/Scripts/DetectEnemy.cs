@@ -53,7 +53,7 @@ public class DetectEnemy : MonoBehaviour
     {
         obj = objectPool.GetBulletObject(0);
         obj.SetActive(true);
-        obj.transform.position = transform.position + transform.up;
+        obj.transform.position = transform.position + (transform.up * 1.5f);
         obj.transform.rotation = Quaternion.identity;
         obj.GetComponent<Bullet>().GiveTarget(target);
 

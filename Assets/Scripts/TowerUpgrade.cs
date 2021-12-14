@@ -24,7 +24,8 @@ namespace MediaProject
 
 			// 같은 타입,레벨의 타워가 선택된 경우
 			if (Disc.discInfo[usingDiskNum].towerLevel == Disc.discInfo[upgradeDiskNum].towerLevel 
-			    && Disc.discInfo[usingDiskNum].towerType == Disc.discInfo[upgradeDiskNum].towerType)
+			    && Disc.discInfo[usingDiskNum].towerType == Disc.discInfo[upgradeDiskNum].towerType
+			    && usingDiskNum != upgradeDiskNum)
 			{
 				// 업그레이드 비용 검사
 				int level = Disc.discInfo[usingDiskNum].towerLevel;

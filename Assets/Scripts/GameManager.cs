@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject liveNumPanel;
     [SerializeField] private Text liveNumText;
-    private int[] stageEnemyNumList = {20, 22, 24, 26, 1, 28, 30, 32, 1, 34, 36, 38, 1};
+    private int[] stageEnemyNumList = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
     public int curLiveEnemyNum = 0;
 
     [SerializeField] private List<GameObject> bosses;
