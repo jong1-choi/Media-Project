@@ -19,7 +19,7 @@ namespace MediaProject
 		public static int upgradeDiskNum;
 		private List<Transform> discSet;
 
-		public int createTowerPrice = 10;
+		public int createTowerPrice = 1;
 		
 		private void Awake()
 		{
@@ -55,7 +55,6 @@ namespace MediaProject
 			// pooling된 프리팹을 Active한 후 설정된 타입, 레벨에 해당하는 타워를 Active
 			towerPrefab.gameObject.SetActive(true);
 			towerPrefab.transform.GetChild(Disc.discInfo[diskNum].towerLevel - 1).gameObject.SetActive(true);
-			print(Disc.discInfo[diskNum].towerLevel);
 		}
 
 		IEnumerator WrongMsg(String text)

@@ -20,8 +20,7 @@ namespace MediaProject
 		private float minDistance = 1.0f;
 
 		[SerializeField] private ParticleSystem hurtParticle;
-		public float maxHP = 10.0f;
-		public float hp = 10.0f;
+		public float hp;
 
 		public int moneyAmount = 5;
 
@@ -42,7 +41,7 @@ namespace MediaProject
 		// SetActive(true) 했을 경우 초기화할 것들.
 		void OnEnable()
 		{
-			hp = maxHP;
+			hp = GameManager.maxHP[GameManager.Instance.currentStage];
 			targetWayPointIndex = 0;
 			if(waypoints.Count != 0) 
 				targetWaypoint = waypoints[targetWayPointIndex];
@@ -66,8 +65,8 @@ namespace MediaProject
 			Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget);
 			transform.rotation = Quaternion.Slerp(transform.rotation, rotationToTarget, rotationStep);
 
-			Debug.DrawRay(transform.position, transform.forward * 5f, Color.green, 0f);
-			Debug.DrawRay(transform.position, directionToTarget, Color.red, 0f);
+			//Debug.DrawRay(transform.position, transform.forward * 5f, Color.green, 0f);
+			//Debug.DrawRay(transform.position, directionToTarget, Color.red, 0f);
         
 			float distance = Vector3.Distance(transform.position, targetWaypoint.position);
 			CheckDistanceToWaypoint(distance);

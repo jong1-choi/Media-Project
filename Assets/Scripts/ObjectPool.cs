@@ -88,21 +88,7 @@ public class ObjectPool : MonoBehaviour
                 obj.SetActive(false);
                 bulletPools[i].Add(obj);
             }
-        } 
-        
-        // bulletPools = new List<List<BulletInfo>>();
-        // for(int i=0; i< bullets.Count; i++)
-        // {
-        //     bulletPools.Add(new List<BulletInfo>());
-        //     for (int j = 0; j < bulletCount; j++)
-        //     {
-        //         GameObject obj = Instantiate(bullets[i]);
-        //         obj.transform.parent = bulletPoolObj.transform;
-        //         obj.SetActive(false);
-        //         BulletInfo bulletInfo = new BulletInfo(obj, null);
-        //         bulletPools[i].Add(bulletInfo);
-        //     }
-        // } 
+        }
     }
 
     // index로 원하는 enemy를 return.
@@ -163,26 +149,5 @@ public class ObjectPool : MonoBehaviour
         }
         return null;
     }
-    // public BulletInfo GetBulletObject(int index, GameObject target)
-    // {
-    //     foreach (BulletInfo bullet in bulletPools[index])
-    //     {
-    //         if (!bullet.bulletPrefab.activeInHierarchy)
-    //         {
-    //             bullet.targetPrefab = target;
-    //             return bullet;
-    //         }
-    //     }
-    //     
-    //     if (bulletMore)
-    //     {
-    //         GameObject obj = Instantiate(bullets[index]);
-    //         obj.transform.parent = bulletPoolObj.transform;
-    //         BulletInfo bulletInfo = new BulletInfo(obj, target);
-    //         bulletPools[index].Add(bulletInfo);
-    //         return bulletInfo;
-    //     }
-    //     
-    //     return null;
-    // }
+
 }

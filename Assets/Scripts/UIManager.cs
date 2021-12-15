@@ -170,6 +170,10 @@ public class UIManager : MonoBehaviour
         AudioListener.pause = false;
     }
 
+    public void InitialHP(float value)
+    {
+        HPSlider.value = 1;
+    }
 
     public void UpdateHP(float value)
     {

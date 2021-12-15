@@ -10,7 +10,7 @@ namespace MediaProject
 	{
 		// [SerializeField] Text message;
 		private List<Transform> discSet;
-
+		public int upgradeTowerPrice = 1;
 		private void Awake()
 		{
 			discSet = this.GetComponent<Disc>().discs;
@@ -29,7 +29,7 @@ namespace MediaProject
 			{
 				// 업그레이드 비용 검사
 				int level = Disc.discInfo[usingDiskNum].towerLevel;
-				if ( !GameManager.Instance.PayMoney(level * 10) )
+				if ( !GameManager.Instance.PayMoney(upgradeTowerPrice) )
 				{
 					StartCoroutine(this.WrongMsg("업그레이드 비용이 부족합니다.\n업그레이드 비용 : " + level*10));
 					return;

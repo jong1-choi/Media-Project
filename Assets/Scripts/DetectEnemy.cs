@@ -89,7 +89,7 @@ public class DetectEnemy : MonoBehaviour
                 isEnemyDetected = false;
             }
 
-            if (enemyScript.hp == 0)
+            if (enemyScript.hp <= 0)
             {
                 obj.SetActive(false);
                 isEnemyDetected = false;

@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     private float timeRemaining;
 
     // State
-    public int currentStage; // 0부터. (Player에게 보여지는 건 1부터.)
+    public int currentStage;
     private int curEnemyIndex;
     [SerializeField] private Text stageText;
 
@@ -60,7 +60,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject liveNumPanel;
     [SerializeField] private Text liveNumText;
-    private int[] stageEnemyNumList = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+    public int[] stageEnemyNumList = {1, 2, 3, 1, 4, 5, 6, 1, 7, 8, 9, 1};
+    public static float[] maxHP = {5, 5, 5, 10, 5, 5, 5, 10, 5, 5, 5, 10};
     public int curLiveEnemyNum = 0;
 
     [SerializeField] private List<GameObject> bosses;
@@ -87,6 +88,12 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (currentStage == stageEnemyNumList.Length)
+        {
+            GameOver();
+            return;
+        }
+        
         if (curState == CurState.Playing)
         {
             // Play 상태일 때.
@@ -130,26 +137,29 @@ public class GameManager : MonoBehaviour
     // 일정 시간 간격으로 적을 Spawn 해주는 코루틴.
     private IEnumerator SpawnWithTime(int enemyNum)
     {
-        // Test: enemyNum만큼 적을 1.5초 간격으로 생성
+        // Test: enemyNum만큼 적을 1초 간격으로 생성
         while (enemyNum-- != 0)
         {
             // 현재 stage에 맞는 적 생성
-            switch (currentStage)
+            switch (currentStage + 1)
             {
                 case 4: // 1 Boss
+                    UIManager.Instance.UpdateHP(1);
                     SpawnBoss(0);
                     break;
                 case 8: // 2 Boss
+                    UIManager.Instance.UpdateHP(1);
                     SpawnBoss(1);
                     break;
                 case 12: // 3 Boss
+                    UIManager.Instance.UpdateHP(1);
                     SpawnBoss(2);
                     break;
                 default:
                     Spawn( curEnemyIndex );
                     break;
             }
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1f);
         }
     }
     
@@ -231,7 +241,7 @@ public class GameManager : MonoBehaviour
         if (curLiveEnemyNum > 0) return;
         currentStage++;
         curEnemyIndex++;
-        stageText.text = "Stage " + (currentStage+1); // 사용자에게 보여주기 위해 1을 더함. (사용자는 Stage 1부터임)
+        stageText.text = "Stage " + (currentStage + 1); // 사용자에게 보여주기 위해 1을 더함. (사용자는 Stage 1부터임)
         SetPeacefulState();
     }
     

@@ -532,7 +532,6 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1539,7 +1538,7 @@ Transform:
   m_GameObject: {fileID: 7690907527824794656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 7688632160716143868}
   - {fileID: 7688461577791834082}
@@ -1593,7 +1592,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.7402711
-  m_Height: 1.9436493
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.035128593, y: 0.81456375, z: 0.20514244}
 --- !u!114 &7691534891142720700
@@ -1611,6 +1610,10 @@ MonoBehaviour:
   moveSpeed: 3
   rotationSpeed: 3
   hurtParticle: {fileID: 19886758, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
+  maxHP: 10
+  hp: 10
+  moneyAmount: 5
+  isArrived: 0
 --- !u!1 &7690940531422774178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,7 +1748,6 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

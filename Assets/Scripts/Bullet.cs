@@ -49,11 +49,11 @@ namespace MediaProject
         private void FixedUpdate()
         {
             this.MoveToTarget();
-            // if (enemyScript.hp == 0)
-            // {
-            //     Debug.Log("enemy already die");
-            //     gameObject.SetActive(false);
-            // }
+            if (target.gameObject.GetComponent<Enemy>().hp <= 0)
+            {
+                Debug.Log("target destroy");
+                gameObject.SetActive(false);
+            }
         }
     }
 }
