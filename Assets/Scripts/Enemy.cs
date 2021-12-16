@@ -52,7 +52,7 @@ namespace MediaProject
 		void FixedUpdate()
 		{
 			Move();
-			RotateWithSphere();
+			RotateWithSphere();	
 		}
 
 		// waypoint로 이동 및 회전.
