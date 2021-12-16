@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = System.Object;
 
 namespace MediaProject
 {
@@ -19,16 +20,20 @@ namespace MediaProject
 		private int lastWayPointIndex;
 		private float minDistance = 1.0f;
 
-		[SerializeField] private ParticleSystem hurtParticle;
+		// [SerializeField] private ParticleSystem hurtParticle;
 		public float hp;
 
 		public int moneyAmount = 5;
 
 		public bool isArrived;
+
+		[SerializeField] private ObjectPool objectPool;
+		[SerializeField] private int particleIndex = 0;
 		
 
 		void Start()
 		{
+			objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
 			waypoints = GameManager.Instance.Waypoints;
 			planet = GameManager.Instance.planet;
         
@@ -65,9 +70,6 @@ namespace MediaProject
 			Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget);
 			transform.rotation = Quaternion.Slerp(transform.rotation, rotationToTarget, rotationStep);
 
-			//Debug.DrawRay(transform.position, transform.forward * 5f, Color.green, 0f);
-			//Debug.DrawRay(transform.position, directionToTarget, Color.red, 0f);
-        
 			float distance = Vector3.Distance(transform.position, targetWaypoint.position);
 			CheckDistanceToWaypoint(distance);
         
@@ -121,14 +123,29 @@ namespace MediaProject
 			if (hp <= 0)
 			{
 				Dead();
+				return;
 			}
 			
 			// 맞는 방향(z방향)으로 particle 생성.
-			ParticleSystem particle = Instantiate(hurtParticle, transform.position, dir);
+			// ParticleSystem particle = Instantiate(hurtParticle, transform.position, dir);
+			GameObject obj = objectPool.GetParticleObject(particleIndex);
+			obj.transform.position = transform.position;
+			obj.transform.rotation = dir;
+			obj.SetActive(true);
 			// particle 시간 끝나면 파괴.
+			// ParticleSystem particle = obj.GetComponent<ParticleSystem>();
 			// Destroy(particle.gameObject, particle.main.duration); // TODO: particle duration 조절.
-			Destroy(particle.gameObject, 3.0f);
+			// Destroy(particle.gameObject, 3.0f);
+			StartCoroutine(DelayActiveFalseObj(obj, 3.0f));
 		}
+
+
+		private IEnumerator DelayActiveFalseObj(GameObject obj, float delay)
+		{
+			yield return new WaitForSeconds(delay);
+			obj.SetActive(false);
+		}
+		
 		
 		// Enemy가 죽을 때 호출해서 사용.
 		protected virtual void Dead()

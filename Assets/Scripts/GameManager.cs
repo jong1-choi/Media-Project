@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
@@ -42,11 +43,11 @@ public class GameManager : MonoBehaviour
     // Timer
     [SerializeField] public GameObject timerPanel;
     [SerializeField] private Text timeText;
-    [SerializeField] private float peacefulTime = 5f;
+    [SerializeField] private float peacefulTime = 1f;
     private float timeRemaining;
 
     // State
-    public int currentStage;
+    [HideInInspector]public int currentStage;
     private int curEnemyIndex;
     [SerializeField] private Text stageText;
 
@@ -60,8 +61,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject liveNumPanel;
     [SerializeField] private Text liveNumText;
-    public int[] stageEnemyNumList = {1, 2, 3, 1, 4, 5, 6, 1, 7, 8, 9, 1};
-    public static float[] maxHP = {5, 5, 5, 10, 5, 5, 5, 10, 5, 5, 5, 10};
+    [HideInInspector] public int[] stageEnemyNumList = {10, 10, 10, 1, 10, 10, 10, 1, 10, 10, 10, 1};
+    public static float[] maxHP = {15, 23, 31, 180, 39, 47, 55, 250, 63, 71, 79, 330};
     public int curLiveEnemyNum = 0;
 
     [SerializeField] private List<GameObject> bosses;
@@ -72,7 +73,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text moneyText;
     private int money = 100;
 
+    [SerializeField] private Text endingText;
 
+    private bool isGameEnd = false;
 
     void Start()
     {
@@ -88,9 +91,11 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (isGameEnd) return;
         if (currentStage == stageEnemyNumList.Length)
         {
-            GameOver();
+            GameOver("Game Clear !");
+            isGameEnd = true;
             return;
         }
         
@@ -209,6 +214,7 @@ public class GameManager : MonoBehaviour
     // 현재 살아있는 적 UI 업데이트.
     private void UpdateLiveEnemyNumText()
     {
+        if(currentStage == stageEnemyNumList.Length) return;
         liveNumText.text = curLiveEnemyNum + " / " + stageEnemyNumList[currentStage];
     }
     
@@ -229,6 +235,7 @@ public class GameManager : MonoBehaviour
     // 적의 수를 더해줌. 적이 죽을 때 num = -1 로 넘겨줌.
     public void AddLiveEnemyNum(int num)
     {
+        if(currentStage == stageEnemyNumList.Length) return;
         curLiveEnemyNum += num;
         CheckExistEnemy();
         UpdateLiveEnemyNumText();
@@ -259,6 +266,7 @@ public class GameManager : MonoBehaviour
     // Playing 상태로 넘어갈 때 설정들.
     private void SetPlayingState()
     {
+        if(currentStage == stageEnemyNumList.Length) return;
         curLiveEnemyNum = stageEnemyNumList[currentStage];
         curState = CurState.Playing;
         UpdateLiveEnemyNumText();
@@ -286,6 +294,7 @@ public class GameManager : MonoBehaviour
     // Life를 더해줌. 적이 목적지에 도달했을 때 -1을 넘겨줌.
     public void AddLife(int num)
     {
+        if (isGameEnd) return;
         life += num;
         CheckLife();
     }
@@ -296,7 +305,8 @@ public class GameManager : MonoBehaviour
     {
         if (life <= 0)
         {
-            GameOver();
+            GameOver("Game Over");
+            isGameEnd = true;
         }
         else
         {
@@ -306,8 +316,10 @@ public class GameManager : MonoBehaviour
     
     
     // GameOver 되었을 때.
-    private void GameOver()
+    private void GameOver(String text)
     {
+        if (isGameEnd) return;
+        endingText.text = text;
         UIManager.Instance.OpenGameOverPanel();
     }
 

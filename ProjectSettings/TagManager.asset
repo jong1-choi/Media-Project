@@ -7,6 +7,8 @@ TagManager:
   - Disc
   - Enemy
   - Destination
+  - Tower1
+  - Tower2
   layers:
   - Default
   - TransparentFX

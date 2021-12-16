@@ -10,7 +10,7 @@ namespace MediaProject
 	{
 		// [SerializeField] Text message;
 		private List<Transform> discSet;
-		public int upgradeTowerPrice = 1;
+		private int upgradeTowerPrice = 10;
 		private void Awake()
 		{
 			discSet = this.GetComponent<Disc>().discs;

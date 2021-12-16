@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88e97ec00f8360f4f962b7fc246193df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPoolObj: {fileID: 7810757302633918563, guid: c6c2bbf4634908f47ac34150d78ed7e5, type: 3}
+  enemyPoolObj: {fileID: 0}
   enemies:
   - {fileID: 3607088120601887423, guid: d41637b83dff640269551d9c092802f0, type: 3}
   - {fileID: 3994785945262754013, guid: b968b8ca2920c4497b101358d8666f3c, type: 3}
@@ -56,14 +56,22 @@ MonoBehaviour:
   - {fileID: 6646909101577997468, guid: 97f2e9bedd6c6456a8aa900ceb1fe440, type: 3}
   enemyCount: 5
   enemyMore: 1
-  towerPoolObj: {fileID: 4026777891522011001, guid: f9007bedc19b3864dad073de366cb123, type: 3}
+  towerPoolObj: {fileID: 0}
   towers:
   - {fileID: 6875952097996156388, guid: 0ab9cf6579e24494f8009cfde20abe37, type: 3}
   - {fileID: 2505318761810033510, guid: bdc62090de2fd49a88d178e05eaba0f2, type: 3}
   towerCount: 5
   towerMore: 1
-  bulletPoolObj: {fileID: 360380878130843336, guid: d281caf422840e149aefdc9e3eea4070, type: 3}
+  bulletPoolObj: {fileID: 0}
   bullets:
+  - {fileID: 7034271581460652221, guid: 4c4ce7d44a85f44ef87eb202cb76b88b, type: 3}
   - {fileID: 8970971475313733702, guid: d9b760d5c852e4449a62b6d6d86c1c85, type: 3}
   bulletCount: 5
   bulletMore: 1
+  particlePoolObj: {fileID: 0}
+  particles:
+  - {fileID: 120410, guid: 6636b3078b0905e489f698a11b7a6b6b, type: 3}
+  - {fileID: 100748, guid: cd4d7020429cde74db076ffa72495419, type: 3}
+  - {fileID: 194062, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
+  particleCount: 5
+  particleMore: 1

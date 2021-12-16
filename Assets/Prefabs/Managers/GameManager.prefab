@@ -57,6 +57,7 @@ MonoBehaviour:
   curState: 0
   liveNumPanel: {fileID: 0}
   liveNumText: {fileID: 0}
+  stageEnemyNumList: 0a0000000a0000000a000000010000000a0000000a0000000a000000010000000a0000000a0000000a00000001000000
   curLiveEnemyNum: 0
   bosses:
   - {fileID: 5208846822837526011, guid: e99a0b51391a2934dbd1759c8322b467, type: 3}
@@ -64,6 +65,8 @@ MonoBehaviour:
   - {fileID: 5510043927633558208, guid: 48b90c0944d6eed4f964f0f6f1af3b46, type: 3}
   lifeText: {fileID: 0}
   life: 20
+  moneyText: {fileID: 0}
+  endingText: {fileID: 0}
 --- !u!82 &527244460899883580
 AudioSource:
   m_ObjectHideFlags: 0

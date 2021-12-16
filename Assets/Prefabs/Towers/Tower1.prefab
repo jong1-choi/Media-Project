@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &3859798759020230655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4488532375835261875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f147f01e6b94749f19613fffd36a7d23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerRange: 5
+  bulletDamage: 3
+  isEnemyDetected: 0
+--- !u!114 &2330374295290607842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4674163519156171434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f147f01e6b94749f19613fffd36a7d23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerRange: 7
+  bulletDamage: 19
+  isEnemyDetected: 0
+--- !u!114 &3819771832205012739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5309414756232394588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f147f01e6b94749f19613fffd36a7d23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerRange: 5
+  bulletDamage: 1
+  isEnemyDetected: 0
+--- !u!114 &7122373681896008023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6117464387453516267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f147f01e6b94749f19613fffd36a7d23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerRange: 6
+  bulletDamage: 8
+  isEnemyDetected: 0
 --- !u!1 &6875952097996156388
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,8 +70,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6203760433600802344}
   m_Layer: 0
-  m_Name: Type1
-  m_TagString: Untagged
+  m_Name: Tower1
+  m_TagString: Tower1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,6 +109,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1914581310142818425, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134632018121871229, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2248823787997334147, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -56,6 +124,10 @@ PrefabInstance:
     - target: {fileID: 2547592989191186923, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3508994921336425637, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3640828146055825657, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
       propertyPath: m_IsActive
@@ -80,6 +152,10 @@ PrefabInstance:
     - target: {fileID: 6193644456894574910, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193644456894574910, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
+      propertyPath: m_TagString
+      value: Tower1
       objectReference: {fileID: 0}
     - target: {fileID: 6827437784730758020, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
       propertyPath: m_RootOrder
@@ -141,6 +217,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6908951649294442465, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8008599622857252822, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -157,21 +237,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6827437784730758020, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
   m_PrefabInstance: {fileID: 77026990015662293}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7122373681896008023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6117464387453516267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f147f01e6b94749f19613fffd36a7d23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerRange: 5
-  isEnemyDetected: 0
-  target: {fileID: 0}
 --- !u!1001 &1524970013354623892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -189,7 +254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1914581310142818425, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2134632018121871229, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
       propertyPath: m_IsActive
@@ -230,6 +295,10 @@ PrefabInstance:
     - target: {fileID: 6193644456894574910, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193644456894574910, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
+      propertyPath: m_TagString
+      value: Tower1
       objectReference: {fileID: 0}
     - target: {fileID: 6827437784730758020, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
       propertyPath: m_RootOrder
@@ -311,21 +380,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6827437784730758020, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
   m_PrefabInstance: {fileID: 1524970013354623892}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2330374295290607842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4674163519156171434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f147f01e6b94749f19613fffd36a7d23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerRange: 5
-  isEnemyDetected: 0
-  target: {fileID: 0}
 --- !u!1001 &4294000576740854481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -473,6 +527,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8230766273605467533, guid: ffd110f01222ea943bc4b2bd2524f1d9, type: 3}
+      propertyPath: m_TagString
+      value: Tower1
+      objectReference: {fileID: 0}
     - target: {fileID: 8623156685373026600, guid: ffd110f01222ea943bc4b2bd2524f1d9, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
@@ -545,21 +603,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8751161469425723191, guid: ffd110f01222ea943bc4b2bd2524f1d9, type: 3}
   m_PrefabInstance: {fileID: 4294000576740854481}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3819771832205012739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5309414756232394588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f147f01e6b94749f19613fffd36a7d23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerRange: 5
-  isEnemyDetected: 0
-  target: {fileID: 0}
 --- !u!1001 &7763720578061863565
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -606,6 +649,10 @@ PrefabInstance:
     - target: {fileID: 6193644456894574910, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193644456894574910, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
+      propertyPath: m_TagString
+      value: Tower1
       objectReference: {fileID: 0}
     - target: {fileID: 6827437784730758020, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
       propertyPath: m_RootOrder
@@ -675,18 +722,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6827437784730758020, guid: 5de81f6866c59ec40933b8d05648a2e2, type: 3}
   m_PrefabInstance: {fileID: 7763720578061863565}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3859798759020230655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4488532375835261875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f147f01e6b94749f19613fffd36a7d23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerRange: 5
-  isEnemyDetected: 0
-  target: {fileID: 0}

@@ -2,27 +2,30 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using MediaProject;
+using UnityEditor;
 // using TreeEditor;
 using UnityEngine;
 
 public class DetectEnemy : MonoBehaviour
 {
     [SerializeField] private int towerRange = 5;
+    [SerializeField] private int bulletDamage = 5;
     // [SerializeField] private ObjectPool objectPool;
-    public bool isEnemyDetected;
-    public Transform target;
+    [HideInInspector] public bool isEnemyDetected;
+    private Transform target;
     private Collider[] targetEnemy;
     private bool delayCheck = true;
     private ObjectPool objectPool;
     private Enemy enemyScript;
-    private GameObject obj;
-
-    public static Dictionary<int, Transform> getTarget;
+    private GameObject bullet;
+    private Bullet bulletScript;
+    private Animator _animator;
 
     private void Awake()
     {
         objectPool = GameObject.Find("ObjectPool").GetComponent<ObjectPool>();
-        getTarget = new Dictionary<int, Transform>();
+        _animator = this.GetComponent<Animator>();
+        isEnemyDetected = false;
     }
 
     private void FindEnemy()
@@ -51,12 +54,18 @@ public class DetectEnemy : MonoBehaviour
 
     private void ShootBullet()
     {
-        obj = objectPool.GetBulletObject(0);
-        obj.SetActive(true);
-        obj.transform.position = transform.position + (transform.up * 1.5f);
-        obj.transform.rotation = Quaternion.identity;
-        obj.GetComponent<Bullet>().GiveTarget(target);
-
+        _animator.SetBool("Attack", true);
+        if (this.CompareTag("Tower1")) bullet = objectPool.GetBulletObject(0);
+        else if (this.CompareTag("Tower2")) bullet = objectPool.GetBulletObject(1);
+        else if (this.CompareTag("Tower3")) bullet = objectPool.GetBulletObject(2);
+        else if (this.CompareTag("Tower4")) bullet = objectPool.GetBulletObject(3);
+        
+        bullet.SetActive(true);
+        bullet.transform.position = transform.position + (transform.up * 1.5f);
+        bullet.transform.rotation = Quaternion.identity;
+        bulletScript = bullet.GetComponent<Bullet>();
+        bulletScript.SetTarget(target);
+        bulletScript.SetBulletDamage(bulletDamage);
     }
 
     IEnumerator ShootDelay()
@@ -91,7 +100,7 @@ public class DetectEnemy : MonoBehaviour
 
             if (enemyScript.hp <= 0)
             {
-                obj.SetActive(false);
+                bullet.SetActive(false);
                 isEnemyDetected = false;
             }
         }

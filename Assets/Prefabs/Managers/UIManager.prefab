@@ -45,8 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 3ae4aba3cbf93424daad928c6b5055c3, type: 2}
   textPanel: {fileID: 0}
-  installText: {fileID: 0}
-  upgradeText: {fileID: 0}
+  systemText: {fileID: 0}
   optionPanel: {fileID: 0}
   maskPanel: {fileID: 0}
   BGMText: {fileID: 0}

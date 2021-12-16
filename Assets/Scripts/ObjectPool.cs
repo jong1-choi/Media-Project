@@ -41,6 +41,14 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] private int bulletCount = 5;
     [SerializeField] private bool bulletMore = true;
 
+    
+    [SerializeField] private GameObject particlePoolObj;
+    // private List<List<BulletInfo>> bulletPools;
+    private List<List<GameObject>> particlePools;
+    [SerializeField] public List<GameObject> particles;
+    [SerializeField] private int particleCount = 5;
+    [SerializeField] private bool particleMore = true;
+    
 
     // enemy를 생성하기 전에 다른 Script에서 접근하면 안돼서,
     // Start()보다 빠른 Awake()에서 생성 함수(Create())를 호출.
@@ -87,6 +95,19 @@ public class ObjectPool : MonoBehaviour
                 obj.transform.parent = bulletPoolObj.transform;
                 obj.SetActive(false);
                 bulletPools[i].Add(obj);
+            }
+        }
+        
+        particlePools = new List<List<GameObject>>();
+        for(int i=0; i< particles.Count; i++)
+        {
+            particlePools.Add(new List<GameObject>());
+            for (int j = 0; j < particleCount; j++)
+            {
+                GameObject obj = Instantiate(particles[i]);
+                obj.transform.parent = particlePoolObj.transform;
+                obj.SetActive(false);
+                particlePools[i].Add(obj);
             }
         }
     }
@@ -145,6 +166,23 @@ public class ObjectPool : MonoBehaviour
             GameObject obj = Instantiate(bullets[index]);
             obj.transform.parent = bulletPoolObj.transform;
             bulletPools[index].Add(obj);
+            return obj;
+        }
+        return null;
+    }
+    
+    public GameObject GetParticleObject(int index)
+    {
+        foreach (GameObject obj in particlePools[index])
+        {
+            if (!obj.activeInHierarchy) return obj;
+        }
+        
+        if (particleMore)
+        {
+            GameObject obj = Instantiate(particles[index]);
+            obj.transform.parent = particlePoolObj.transform;
+            particlePools[index].Add(obj);
             return obj;
         }
         return null;
