@@ -875,7 +875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
-  rotationSpeed: 4
+  rotationSpeed: 3
   hurtParticle: {fileID: 19814690, guid: cd4d7020429cde74db076ffa72495419, type: 3}
   hp: 10
   moneyAmount: 5
