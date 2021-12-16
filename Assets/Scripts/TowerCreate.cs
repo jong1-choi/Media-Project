@@ -19,7 +19,7 @@ namespace MediaProject
 		public static int upgradeDiskNum;
 		private List<Transform> discSet;
 
-		public int createTowerPrice = 1;
+		private int createTowerPrice = 10;
 		
 		private void Awake()
 		{

@@ -289,6 +289,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1694325213 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5457630982278651356, guid: a30c6bff7e4605744b436f581fd478a3, type: 3}
+  m_PrefabInstance: {fileID: 5457630981260823068}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1695142612 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5457630981848438984, guid: a30c6bff7e4605744b436f581fd478a3, type: 3}
@@ -377,6 +388,10 @@ PrefabInstance:
       propertyPath: stageText
       value: 
       objectReference: {fileID: 347357607}
+    - target: {fileID: 527244460899883582, guid: 5b3d353583530b94b9dd0b50f7a0c6e6, type: 3}
+      propertyPath: endingText
+      value: 
+      objectReference: {fileID: 1694325213}
     - target: {fileID: 527244460899883582, guid: 5b3d353583530b94b9dd0b50f7a0c6e6, type: 3}
       propertyPath: objectPool
       value: 
@@ -869,9 +884,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1973854187}
     - target: {fileID: 4257082827618379039, guid: c26aa28b62d94b24eba9f03833038cc4, type: 3}
+      propertyPath: bullets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257082827618379039, guid: c26aa28b62d94b24eba9f03833038cc4, type: 3}
       propertyPath: enemies.Array.size
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 4257082827618379039, guid: c26aa28b62d94b24eba9f03833038cc4, type: 3}
+      propertyPath: bullets.Array.data[0]
+      value: 
+      objectReference: {fileID: 7034271581460652221, guid: 4c4ce7d44a85f44ef87eb202cb76b88b, type: 3}
+    - target: {fileID: 4257082827618379039, guid: c26aa28b62d94b24eba9f03833038cc4, type: 3}
+      propertyPath: bullets.Array.data[1]
+      value: 
+      objectReference: {fileID: 8970971475313733702, guid: d9b760d5c852e4449a62b6d6d86c1c85, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c26aa28b62d94b24eba9f03833038cc4, type: 3}
 --- !u!1001 &4637857717647179145

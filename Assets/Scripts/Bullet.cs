@@ -8,7 +8,7 @@ namespace MediaProject
 {
     public class Bullet : MonoBehaviour
     {
-        private float damage = 1.0f;
+        private int damage;
         private Transform target;
         private GameObject tower;
         private Enemy enemyScript;
@@ -18,9 +18,14 @@ namespace MediaProject
         //     enemyScript = target.GetComponent<Enemy>();
         // }
         
-        public void GiveTarget(Transform target)
+        public void SetTarget(Transform target)
         {
             this.target = target;
+        }
+        
+        public void SetBulletDamage(int damage)
+        {
+            this.damage = damage;
         }
         
         private void OnTriggerEnter(Collider other)
@@ -34,7 +39,7 @@ namespace MediaProject
                 enemy.TakeDamage(damage, transform.localRotation);
 
                 AudioManager.Instance.Play(0);
-                DetectEnemy.getTarget.Remove(this.GetInstanceID());
+                // DetectEnemy.getTarget.Remove(this.GetInstanceID());
                 gameObject.SetActive(false);
             }
         }

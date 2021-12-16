@@ -65,9 +65,6 @@ namespace MediaProject
 			Quaternion rotationToTarget = Quaternion.LookRotation(directionToTarget);
 			transform.rotation = Quaternion.Slerp(transform.rotation, rotationToTarget, rotationStep);
 
-			//Debug.DrawRay(transform.position, transform.forward * 5f, Color.green, 0f);
-			//Debug.DrawRay(transform.position, directionToTarget, Color.red, 0f);
-        
 			float distance = Vector3.Distance(transform.position, targetWaypoint.position);
 			CheckDistanceToWaypoint(distance);
         
