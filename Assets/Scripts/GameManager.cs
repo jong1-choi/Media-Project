@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject liveNumPanel;
     [SerializeField] private Text liveNumText;
     [HideInInspector] public int[] stageEnemyNumList = {10, 10, 10, 1, 10, 10, 10, 1, 10, 10, 10, 1};
-    public static float[] maxHP = {15, 23, 31, 180, 39, 47, 55, 250, 63, 71, 79, 330};
+    public static float[] maxHP = {15, 21, 27 , 180, 33, 39, 45, 250, 51, 57, 63, 330};
     public int curLiveEnemyNum = 0;
 
     [SerializeField] private List<GameObject> bosses;

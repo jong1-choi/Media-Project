@@ -875,7 +875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
-  rotationSpeed: 4
+  rotationSpeed: 4419, type: 3}
   hp: 10
   moneyAmount: 5
   isArrived: 0

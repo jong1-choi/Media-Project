@@ -9,11 +9,13 @@ TagManager:
   - Destination
   - Tower1
   - Tower2
+  - Tower3
+  - Tower4
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
   - 
